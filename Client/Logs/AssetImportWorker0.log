@@ -15,7 +15,7 @@ F:/游戏比赛/2025CUSGA/Client
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-32894
+37483
 Successfully changed project path to: F:/游戏比赛/2025CUSGA/Client
 F:/游戏比赛/2025CUSGA/Client
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,22 +49,22 @@ F:/游戏比赛/2025CUSGA/Client
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [42332]  Target information:
+Player connection [17268]  Target information:
 
-Player connection [42332]  * "[IP] 192.168.59.1 [Port] 0 [Flags] 2 [Guid] 3260092648 [EditorId] 3260092648 [Version] 1048832 [Id] WindowsEditor(7,ChenXi) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [17268]  * "[IP] 192.168.59.1 [Port] 0 [Flags] 2 [Guid] 678596031 [EditorId] 678596031 [Version] 1048832 [Id] WindowsEditor(7,ChenXi) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [42332]  * "[IP] 192.168.153.1 [Port] 0 [Flags] 2 [Guid] 3260092648 [EditorId] 3260092648 [Version] 1048832 [Id] WindowsEditor(7,ChenXi) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [17268]  * "[IP] 192.168.153.1 [Port] 0 [Flags] 2 [Guid] 678596031 [EditorId] 678596031 [Version] 1048832 [Id] WindowsEditor(7,ChenXi) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [42332]  * "[IP] 26.154.25.119 [Port] 0 [Flags] 2 [Guid] 3260092648 [EditorId] 3260092648 [Version] 1048832 [Id] WindowsEditor(7,ChenXi) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [17268]  * "[IP] 26.154.25.119 [Port] 0 [Flags] 2 [Guid] 678596031 [EditorId] 678596031 [Version] 1048832 [Id] WindowsEditor(7,ChenXi) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [42332]  * "[IP] 172.22.240.1 [Port] 0 [Flags] 2 [Guid] 3260092648 [EditorId] 3260092648 [Version] 1048832 [Id] WindowsEditor(7,ChenXi) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [17268]  * "[IP] 172.30.176.1 [Port] 0 [Flags] 2 [Guid] 678596031 [EditorId] 678596031 [Version] 1048832 [Id] WindowsEditor(7,ChenXi) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [42332]  * "[IP] 172.29.183.32 [Port] 0 [Flags] 2 [Guid] 3260092648 [EditorId] 3260092648 [Version] 1048832 [Id] WindowsEditor(7,ChenXi) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [17268]  * "[IP] 172.29.183.32 [Port] 0 [Flags] 2 [Guid] 678596031 [EditorId] 678596031 [Version] 1048832 [Id] WindowsEditor(7,ChenXi) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [42332] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [42332] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [17268] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [17268] Host joined alternative multi-casting on [225.0.0.222:34997]...
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-Refreshing native plugins compatible for Editor in 35.59 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 45.02 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.53f1c1 (f16e16b78e06)
 [Subsystems] Discovering subsystems at path E:/UnityHUB/2022.3.53f1c1/Editor/Data/Resources/UnitySubsystems
@@ -80,47 +80,59 @@ Initialize mono
 Mono path[0] = 'E:/UnityHUB/2022.3.53f1c1/Editor/Data/Managed'
 Mono path[1] = 'E:/UnityHUB/2022.3.53f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'E:/UnityHUB/2022.3.53f1c1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56560
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56840
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: E:/UnityHUB/2022.3.53f1c1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: E:/UnityHUB/2022.3.53f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.009657 seconds.
-- Loaded All Assemblies, in  0.355 seconds
+Registered in 0.012172 seconds.
+- Loaded All Assemblies, in  0.560 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 596 ms
+Multiple ADB server instances found, the following ADB server instance have been terminated due to being run from another SDK. Process paths: 
+E:\UnityHUB\2022.3.34f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\SDK\platform-tools\adb.exe
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEditor.Android.AndroidDeploymentTargetsExtension:GetKnownTargets (UnityEditor.DeploymentTargets.IDeploymentTargetsMainThreadContext,UnityEditor.ProgressHandler)
+UnityEditor.Android.TargetScanWorker:ScanSync ()
+UnityEditor.Android.TargetExtension:OnUsbDevicesChanged (UnityEditor.Hardware.UsbDevice[])
+UnityEditor.Android.TargetExtension:OnLoad ()
+UnityEditor.Modules.ModuleManager:InitializePlatformSupportModules ()
+
+Android Extension - Scanning For ADB Devices 3058 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.900 seconds
-Domain Reload Profiling: 1253ms
-	BeginReloadAssembly (128ms)
+- Finished resetting the current domain, in  3.571 seconds
+Domain Reload Profiling: 4129ms
+	BeginReloadAssembly (114ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (58ms)
-	LoadAllAssembliesAndSetupDomain (129ms)
-		LoadAssemblies (126ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (128ms)
+	LoadAllAssembliesAndSetupDomain (267ms)
+		LoadAssemblies (111ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (127ms)
-			TypeCache.Refresh (125ms)
-				TypeCache.ScanAssembly (113ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
+		AnalyzeDomain (265ms)
+			TypeCache.Refresh (263ms)
+				TypeCache.ScanAssembly (243ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (900ms)
+	FinalizeReload (3572ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (858ms)
+		SetupLoadedEditorAssemblies (3502ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (672ms)
-			SetLoadedEditorAssemblies (5ms)
+			InitializePlatformSupportModulesInManaged (3178ms)
+			SetLoadedEditorAssemblies (9ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (134ms)
-			ProcessInitializeOnLoadMethodAttributes (45ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (212ms)
+			ProcessInitializeOnLoadMethodAttributes (99ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -129,225 +141,52 @@ Domain Reload Profiling: 1253ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-Duplicate assembly 'log4net.dll' with different versions detected, using 'Assets/References/log4net.dll, AssemblyName=log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=null' and ignoring 'Packages/com.unity.collab-proxy/Lib/Editor/log4netPlastic.dll, AssemblyName=log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a'.- Loaded All Assemblies, in  1.059 seconds
+Duplicate assembly 'log4net.dll' with different versions detected, using 'Assets/References/log4net.dll, AssemblyName=log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=null' and ignoring 'Packages/com.unity.collab-proxy/Lib/Editor/log4netPlastic.dll, AssemblyName=log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a'.- Loaded All Assemblies, in  4.355 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.149 seconds
-Domain Reload Profiling: 3203ms
-	BeginReloadAssembly (160ms)
+- Finished resetting the current domain, in  3.667 seconds
+Domain Reload Profiling: 8002ms
+	BeginReloadAssembly (355ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (10ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (25ms)
-	RebuildCommonClasses (32ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (49ms)
-	LoadAllAssembliesAndSetupDomain (802ms)
-		LoadAssemblies (583ms)
+		CreateAndSetChildDomain (61ms)
+	RebuildCommonClasses (123ms)
+	RebuildNativeTypeToScriptingClass (92ms)
+	initialDomainReloadingComplete (466ms)
+	LoadAllAssembliesAndSetupDomain (3298ms)
+		LoadAssemblies (1991ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (317ms)
-			TypeCache.Refresh (273ms)
-				TypeCache.ScanAssembly (249ms)
-			ScanForSourceGeneratedMonoScriptInfo (37ms)
-			ResolveRequiredComponents (6ms)
-	FinalizeReload (2149ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1926ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (26ms)
-			SetLoadedEditorAssemblies (9ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (174ms)
-			ProcessInitializeOnLoadAttributes (1561ms)
-			ProcessInitializeOnLoadMethodAttributes (143ms)
-			AfterProcessingInitializeOnLoad (12ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (11ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
-Refreshing native plugins compatible for Editor in 25.38 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4528 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 50 unused Assets / (242.9 KB). Loaded Objects now: 5054.
-Memory consumption went from 168.5 MB to 168.3 MB.
-Total: 27.208700 ms (FindLiveObjects: 0.396800 ms CreateObjectMapping: 0.129300 ms MarkObjects: 26.299200 ms  DeleteObjects: 0.381500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-Duplicate assembly 'log4net.dll' with different versions detected, using 'Assets/References/log4net.dll, AssemblyName=log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=null' and ignoring 'Packages/com.unity.collab-proxy/Lib/Editor/log4netPlastic.dll, AssemblyName=log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a'.- Loaded All Assemblies, in  4.330 seconds
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.356 seconds
-Domain Reload Profiling: 6683ms
-	BeginReloadAssembly (2916ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (1905ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (2ms)
-		CreateAndSetChildDomain (590ms)
-	RebuildCommonClasses (70ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (89ms)
-	LoadAllAssembliesAndSetupDomain (1233ms)
-		LoadAssemblies (1356ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (69ms)
-			TypeCache.Refresh (47ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (1ms)
+		AnalyzeDomain (1516ms)
+			TypeCache.Refresh (1420ms)
+				TypeCache.ScanAssembly (1354ms)
+			ScanForSourceGeneratedMonoScriptInfo (73ms)
 			ResolveRequiredComponents (20ms)
-	FinalizeReload (2358ms)
+	FinalizeReload (3668ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1995ms)
+		SetupLoadedEditorAssemblies (3021ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (44ms)
-			SetLoadedEditorAssemblies (10ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (181ms)
-			ProcessInitializeOnLoadAttributes (1545ms)
-			ProcessInitializeOnLoadMethodAttributes (202ms)
-			AfterProcessingInitializeOnLoad (11ms)
-			EditorAssembliesLoaded (2ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (28ms)
-Refreshing native plugins compatible for Editor in 30.60 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4506 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (215.0 KB). Loaded Objects now: 5059.
-Memory consumption went from 163.7 MB to 163.5 MB.
-Total: 33.077300 ms (FindLiveObjects: 0.724300 ms CreateObjectMapping: 0.368300 ms MarkObjects: 30.933900 ms  DeleteObjects: 1.049000 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 35269.575052 seconds.
-  path: Assets/Scripts/GamePlay/Projectile.cs
-  artifactKey: Guid(cd94ffd2ed1f8d04186febef77370a35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/GamePlay/Projectile.cs using Guid(cd94ffd2ed1f8d04186febef77370a35) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '4a057a32a4c5c109629030cb9afc3d24') in 0.023269 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.695476 seconds.
-  path: Assets/Scripts/GamePlay/Enemy.cs
-  artifactKey: Guid(13d3a53b138b8ec4ea8788ebd6fb1aeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/GamePlay/Enemy.cs using Guid(13d3a53b138b8ec4ea8788ebd6fb1aeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'b0262ff5242ac8bad2d48370d311aaed') in 0.000907 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 30.937401 seconds.
-  path: Assets/Scripts/寻路系统/Grid.cs
-  artifactKey: Guid(5cf11a2ed0f62934aa1edb905ed26c11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/寻路系统/Grid.cs using Guid(5cf11a2ed0f62934aa1edb905ed26c11) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '9e0d34fd361ce1469bdaf07d6e992682') in 0.000674 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.510998 seconds.
-  path: Assets/Scripts/寻路系统/EnemyAI.cs
-  artifactKey: Guid(1bace16768a1d014594a174707e835a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/寻路系统/EnemyAI.cs using Guid(1bace16768a1d014594a174707e835a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '9c87f71054dcc1e91cef77ef60643a4f') in 0.000884 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 2.024071 seconds.
-  path: Assets/Scripts/寻路系统/Pathfinding.cs
-  artifactKey: Guid(3bba2b9e678351f4689ecc58463ebee3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/寻路系统/Pathfinding.cs using Guid(3bba2b9e678351f4689ecc58463ebee3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '3a1368f22af0a81aa4752276fd78b4e0') in 0.000655 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-Duplicate assembly 'log4net.dll' with different versions detected, using 'Assets/References/log4net.dll, AssemblyName=log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=null' and ignoring 'Packages/com.unity.collab-proxy/Lib/Editor/log4netPlastic.dll, AssemblyName=log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a'.- Loaded All Assemblies, in  0.803 seconds
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  3.273 seconds
-Domain Reload Profiling: 4069ms
-	BeginReloadAssembly (259ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (17ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (81ms)
-	RebuildCommonClasses (49ms)
-	RebuildNativeTypeToScriptingClass (15ms)
-	initialDomainReloadingComplete (46ms)
-	LoadAllAssembliesAndSetupDomain (426ms)
-		LoadAssemblies (524ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (20ms)
-			TypeCache.Refresh (8ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (10ms)
-	FinalizeReload (3273ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1805ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (30ms)
+			InitializePlatformSupportModulesInManaged (39ms)
 			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (200ms)
-			ProcessInitializeOnLoadAttributes (1395ms)
-			ProcessInitializeOnLoadMethodAttributes (153ms)
-			AfterProcessingInitializeOnLoad (19ms)
+			BeforeProcessingInitializeOnLoad (293ms)
+			ProcessInitializeOnLoadAttributes (2501ms)
+			ProcessInitializeOnLoadMethodAttributes (169ms)
+			AfterProcessingInitializeOnLoad (11ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (23ms)
-Refreshing native plugins compatible for Editor in 29.12 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (12ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+Refreshing native plugins compatible for Editor in 12.05 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4505 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (215.0 KB). Loaded Objects now: 5063.
-Memory consumption went from 163.5 MB to 163.3 MB.
-Total: 31.164900 ms (FindLiveObjects: 0.549800 ms CreateObjectMapping: 0.207000 ms MarkObjects: 29.959100 ms  DeleteObjects: 0.446800 ms)
+Unloading 4529 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 50 unused Assets / (243.3 KB). Loaded Objects now: 5055.
+Memory consumption went from 168.5 MB to 168.3 MB.
+Total: 34.853300 ms (FindLiveObjects: 0.486300 ms CreateObjectMapping: 0.293800 ms MarkObjects: 33.420400 ms  DeleteObjects: 0.651300 ms)
 
-Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
@@ -364,10 +203,28 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 57.714340 seconds.
-  path: Assets/Scripts/Assets
-  artifactKey: Guid(3d9d2331ab574704695475f3f00d737e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Assets using Guid(3d9d2331ab574704695475f3f00d737e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '93969d08082912a8c57edbf60aed498f') in 0.004893 seconds
+  Time since last request: 35515.920215 seconds.
+  path: Assets/Scenes/LoadingPanel.unity
+  artifactKey: Guid(017ce590de3a9914bb2ef6cdc39159f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LoadingPanel.unity using Guid(017ce590de3a9914bb2ef6cdc39159f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e9bbf93d9fdc1931aa54083e0730b03c') in 0.002827 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 251.137617 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f90ed6392c7e714c94b7c80665ea326f') in 0.002627 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.345257 seconds.
+  path: Assets/Scenes/StartLevel.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/StartLevel.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'dbce33971f2a5d2b0403ce9c1ab40211') in 0.001555 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
