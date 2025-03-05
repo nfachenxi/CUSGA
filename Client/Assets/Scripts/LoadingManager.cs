@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class LoadingManager : MonoBehaviour {
     
-    
+
+    public LoadingPanel loadingPanel;
+    public GameMenuPanel gameMenuPanel;
     
     private static bool isBack = false;
 
@@ -18,9 +20,9 @@ public class LoadingManager : MonoBehaviour {
             Log.Init("Unity");
             Log.Info("LoadingManager start");
         
-            //loadingPanel.gameObject.SetActive(true);
+            loadingPanel.gameObject.SetActive(true);
             yield return new WaitForSeconds(12f);
-            //gameMenuPanel.gameObject.SetActive(true);
+            gameMenuPanel.gameObject.SetActive(true);
             SoundManager.Instance.PlayMusic(SoundDefine.Music_MainMenu);
             yield return DataManager.Instance.LoadData();
             isBack = true;
@@ -28,7 +30,7 @@ public class LoadingManager : MonoBehaviour {
         else
         {
             {
-                //gameMenuPanel.gameObject.SetActive(true);
+                gameMenuPanel.gameObject.SetActive(true);
                 SoundManager.Instance.PlayMusic(SoundDefine.Music_MainMenu);
             }
         }

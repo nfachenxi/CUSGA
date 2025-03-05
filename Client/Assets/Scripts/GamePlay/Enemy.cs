@@ -1,16 +1,44 @@
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// 敌人控制类，负责处理敌人的生命值、血条显示和死亡逻辑
+/// </summary>
 public class Enemy : MonoBehaviour
 {
+    /// <summary>
+    /// 敌人的最大生命值
+    /// </summary>
     public int maxHealth = 3;
-    public float healthBarYOffset = 0.5f; // 血条在头顶的偏移量
-    public GameObject healthBarPrefab; // 血条预制体 (包含Canvas和TextMeshPro)
 
+    /// <summary>
+    /// 血条在敌人头顶的垂直偏移量
+    /// </summary>
+    public float healthBarYOffset = 0.5f;
+
+    /// <summary>
+    /// 血条预制体，包含Canvas和TextMeshPro组件
+    /// </summary>
+    public GameObject healthBarPrefab;
+
+    /// <summary>
+    /// 当前生命值
+    /// </summary>
     private int currentHealth;
+
+    /// <summary>
+    /// 血条实例对象
+    /// </summary>
     private GameObject healthBarInstance;
+
+    /// <summary>
+    /// 血条文本组件
+    /// </summary>
     private TextMeshProUGUI healthText;
 
+    /// <summary>
+    /// 初始化敌人状态，创建血条实例
+    /// </summary>
     void Start()
     {
         currentHealth = maxHealth;
@@ -36,6 +64,10 @@ public class Enemy : MonoBehaviour
         }
     }
     //受伤
+    /// <summary>
+    /// 处理敌人受到伤害的逻辑
+    /// </summary>
+    /// <param name="damage">受到的伤害值</param>
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -48,6 +80,9 @@ public class Enemy : MonoBehaviour
         }
     }
     //更新血条显示
+    /// <summary>
+    /// 更新血条UI显示
+    /// </summary>
     void UpdateHealthUI()
     {
         if (healthText != null)
@@ -56,6 +91,9 @@ public class Enemy : MonoBehaviour
         }
     }
     //死亡
+    /// <summary>
+    /// 处理敌人死亡逻辑，包括通知玩家增加击杀数和销毁对象
+    /// </summary>
     void Die()
     {
         // 通知玩家增加击杀数 (稍后在PlayerController中实现)
@@ -73,6 +111,9 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
     //因为敌人在移动，所以要实时更新血条位置
+    /// <summary>
+    /// 每帧更新血条位置，使其跟随敌人移动
+    /// </summary>
     void Update()
     {
         if (healthBarInstance != null)
@@ -81,4 +122,3 @@ public class Enemy : MonoBehaviour
         }
     }
 }
-

@@ -5,23 +5,111 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff2076ba-6225-4f07-972a-1994eea852b7" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/../Art/美术占位文件.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/PlayerMovement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/PlayerMovement.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Client.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/UI.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/UI.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/UI框1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/UI框1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/UI框2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/UI框2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/UI物品1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/UI物品1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/下拉块.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/下拉块.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/下拉按键.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/下拉按键.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/分割线.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/分割线.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/加载条.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/加载条.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/按钮1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/按钮1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/按钮2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/按钮2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/按钮3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/美术资源演示/按钮3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoadingPanel.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoadingPanel.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Assets/Resloader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Assets/Resloader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlay/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/DataManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/DataManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StartLevel.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StartLevel/GameMenuPanel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StartLevel/GameMenuPanel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StartLevel/LoadingPanel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StartLevel/LoadingPanel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/寻路系统.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/寻路系统/EnemyAI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/寻路系统/EnemyAI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/寻路系统/Grid.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/寻路系统/Grid.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/寻路系统/Node.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/寻路系统/Node.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/寻路系统/Pathfinding.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/寻路系统/Pathfinding.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Ground - Logo Scene.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Ground - Logo Scene.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/HarmonyOS_Sans_SC_Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/HarmonyOS_Sans_SC_Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/鼎猎伙伴 SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/鼎猎伙伴 SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/HarmonyOS_Sans_SC_Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/HarmonyOS_Sans_SC_Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/BackGround.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/BackGround.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Demo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Demo/62de6ad9027e49fc81de5108ace5c175 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Demo/62de6ad9027e49fc81de5108ace5c175 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Demo/Prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Demo/Prefab/ItemPrefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Demo/Prefab/ItemPrefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Demo/aqr0h-ds49w-003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Demo/aqr0h-ds49w-003.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Demo/cncnetlobbybg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Demo/cncnetlobbybg.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Demo/common_bg_05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Demo/common_bg_05.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Demo/loadingscreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Demo/loadingscreen.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/game_tips.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/game_tips.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/main_exp_bar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/main_exp_bar.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/start_up_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/start_up_bg.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ui_btton_s_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ui_btton_s_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ui_button_green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ui_button_green.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ui_close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ui_close.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ui_slider_point.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ui_slider_point.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ui_toggle_off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ui_toggle_off.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ui_toogle_on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/ui_toogle_on.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/关闭.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/关闭.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/团队Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/团队Logo.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/设置 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/设置 (1).png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/设置 (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/设置 (2).png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/设置.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/设置.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker2-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker2-prev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker2.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker3-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker3-prev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker3.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker2-prev.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker3-prev.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sirenix.OdinInspector.Modules.UnityMathematics.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Sirenix.OdinInspector.Modules.UnityMathematics.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,10 +119,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2tqrKX7xKpGVs76CFIsjlH3UknZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,13 +131,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "cn.yiiguxing.plugin.translate",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -70,7 +159,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="附加到 Unity 编辑器并运行" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="附加到 Unity 编辑器" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
@@ -83,7 +172,7 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="附加到 Unity 编辑器" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="附加到 Unity 编辑器并运行" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
@@ -105,7 +194,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1741090387107</updated>
-      <workItem from="1741090387109" duration="1231000" />
+      <workItem from="1741090387109" duration="1331000" />
+      <workItem from="1741142080502" duration="4000" />
+      <workItem from="1741142098434" duration="3076000" />
+      <workItem from="1741146410810" duration="188000" />
+      <workItem from="1741146614179" duration="1523000" />
     </task>
     <servers />
   </component>

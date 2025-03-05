@@ -20,14 +20,14 @@ public class DataManager : Singleton<DataManager>
 
     public void Load()
     {
-        string json = File.ReadAllText(this.DataPath + "Contents.txt");
+        //string json = File.ReadAllText(this.DataPath + "Contents.txt");
         //this.Contents = JsonConvert.DeserializeObject<Dictionary<int, ContentDefine>>(json);
 
     }
 
     public IEnumerator LoadData()
     {
-        string json = File.ReadAllText(this.DataPath + "Contents.txt");
+        //string json = File.ReadAllText(this.DataPath + "Contents.txt");
         //this.Contents = JsonConvert.DeserializeObject<Dictionary<int, ContentDefine>>(json);
 
         yield return null;
