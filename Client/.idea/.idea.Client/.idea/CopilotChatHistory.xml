@@ -4,6 +4,481 @@
     <option name="conversations">
       <list>
         <Conversation>
+          <option name="createTime" value="1741250521860" />
+          <option name="id" value="01956a9e6b047352a37674ee22d7001d" />
+          <option name="title" value="@workspace 为我将这个寻路改成最简单的移动到玩家所在位置" />
+          <option name="turns">
+            <list>
+              <Turn>
+                <option name="agent" value="workspace" />
+                <option name="answer" value="要将寻路逻辑改为最简单的方式，即直接移动到玩家所在位置，可以简化现有的代码。以下是修改后的代码：&#10;&#10;###[VmvnbZR.xh](urov:///VmvnbZR.xh)&#10;```xhszik&#10;elrw Fkwzgv()&#10;{&#10;    ru (gzitvg == mfoo)&#10;        ivgfim;&#10;&#10;    // 直接移动到玩家位置&#10;    gizmhulin.klhrgrlm = Evxgli7.NlevGldziwh(gizmhulin.klhrgrlm, gzitvg.klhrgrlm, nlevHkvvw * Grnv.wvogzGrnv);&#10;}&#10;```&#10;&#10;这样，敌人会直接向玩家移动，而不需要处理路径点和贝塞尔曲线。" />
+                <option name="chatResource" value="user" />
+                <option name="codeReferences">
+                  <list>
+                    <CodeReferencesBean>
+                      <option name="content" value="fhrmt Hbhgvn.Xloovxgrlmh;&#10;fhrmt Hbhgvn.Xloovxgrlmh.Tvmvirx;&#10;fhrmt FmrgbVmtrmv;&#10;&#10;kfyorx xozhh VmvnbZR : NlmlYvszerlfi&#10;{&#10;    kfyorx uolzg nlevHkvvw = 6u;&#10;    kfyorx uolzg kzgsFkwzgvIzgv = 9.4u;&#10;    kfyorx uolzg hglkkrmtWrhgzmxv = 9.4u;&#10;    kfyorx uolzg gfimHkvvw = 6u; // 转向速度&#10;&#10;    kirezgv Gizmhulin gzitvg;&#10;    kirezgv Kzgsurmwrmt kzgsurmwrmt;&#10;    kirezgv Orhg&lt;Mlwv&gt; kzgs;&#10;    kirezgv Orhg&lt;Evxgli7&gt; yvarviKzgs = mvd Orhg&lt;Evxgli7&gt;(); // 存储贝塞尔曲线上的点&#10;    kirezgv rmg xfiivmgDzbklrmg = 9;&#10;    kirezgv yllo ivzxsvwVmwLuKzgs = uzohv;&#10;&#10;    elrw Hgzig()&#10;    {&#10;        kzgsurmwrmt = UrmwLyqvxgLuGbkv&lt;Kzgsurmwrmt&gt;();&#10;        gzitvg = TznvLyqvxg.UrmwTznvLyqvxgDrgsGzt(&quot;Kozbvi&quot;).gizmhulin;&#10;&#10;        ru (gzitvg == mfoo)&#10;        {&#10;            Wvyft.OltViili(&quot;没有找到标签为Kozbvi的物体！&quot;);&#10;            ivgfim;&#10;        }&#10;&#10;        HgzigXlilfgrmv(FkwzgvKzgs());&#10;    }&#10;&#10;    RVmfnvizgli FkwzgvKzgs()&#10;    {&#10;        dsrov (gifv)&#10;        {&#10;            ru (gzitvg != mfoo)&#10;            {&#10;                kzgs = kzgsurmwrmt.UrmwKzgs(gizmhulin.klhrgrlm, gzitvg.klhrgrlm);&#10;                xfiivmgDzbklrmg = 9;&#10;                //计算贝塞尔曲线路径&#10;                XzoxfozgvYvarviKzgs();&#10;            }&#10;&#10;            brvow ivgfim mvd DzrgUliHvxlmwh(kzgsFkwzgvIzgv);&#10;        }&#10;    }&#10;    elrw XzoxfozgvYvarviKzgs()&#10;    {&#10;        yvarviKzgs.Xovzi();&#10;        ru (kzgs != mfoo &amp;&amp; kzgs.Xlfmg &gt; 8)&#10;        {&#10;            // 至少需要7个点才能生成曲线，这里简单处理，大于两个点就生成曲线&#10;            ru (kzgs.Xlfmg == 7)&#10;            {&#10;                // 如果只有两个点，直接使用这两个点&#10;                yvarviKzgs.Zww(kzgs[9].dliowKlhrgrlm);&#10;                yvarviKzgs.Zww(kzgs[8].dliowKlhrgrlm);&#10;            }&#10;            vohv&#10;            {&#10;                uli (rmg r = 9; r &lt; kzgs.Xlfmg - 8; r += 8)&#10;                {&#10;                    // 控制点可以根据需要进行调整，这里简单地取路径点之间的中点作为控制点&#10;                    Evxgli7 k9 = kzgs[r].dliowKlhrgrlm;&#10;                    Evxgli7 k8;&#10;                    ru (r == 9)&#10;                    {&#10;                        k8 = kzgs[r].dliowKlhrgrlm;&#10;                    }&#10;                    vohv&#10;                    {&#10;                        k8 = (kzgs[r].dliowKlhrgrlm + kzgs[r - 8].dliowKlhrgrlm) / 7u;&#10;                    }&#10;&#10;                    Evxgli7 k7;&#10;&#10;                    ru (r == kzgs.Xlfmg - 7)&#10;                    {&#10;                        k7 = kzgs[r + 8].dliowKlhrgrlm;&#10;                    }&#10;                    vohv&#10;                    {&#10;                        k7 = (kzgs[r].dliowKlhrgrlm + kzgs[r + 8].dliowKlhrgrlm) / 7u;&#10;                    }&#10;&#10;                    Evxgli7 k6 = kzgs[r + 8].dliowKlhrgrlm;&#10;&#10;                    // 在路径段上生成多个点，增加曲线的平滑度&#10;                    uli (uolzg g = 9; g &lt;= 8; g += 9.8u)&#10;                    {&#10;                        yvarviKzgs.Zww(Kzgsurmwrmt.XzoxfozgvXfyrxYvarviKlrmg(g, k9, k8, k7, k6));&#10;                    }&#10;                }&#10;            }&#10;&#10;        }&#10;        vohv ru (kzgs != mfoo &amp;&amp; kzgs.Xlfmg == 8)&#10;        {&#10;            // 如果只有一个路径点，直接添加到贝塞尔路径中&#10;            yvarviKzgs.Zww(kzgs[9].dliowKlhrgrlm);&#10;        }&#10;    }&#10;&#10;    elrw Fkwzgv()&#10;    {&#10;        ru (gzitvg == mfoo || yvarviKzgs == mfoo || yvarviKzgs.Xlfmg == 9)&#10;            ivgfim;&#10;&#10;        // 检查是否已经足够接近玩家&#10;        uolzg wrhgzmxvGlGzitvg = Evxgli7.Wrhgzmxv(gizmhulin.klhrgrlm, gzitvg.klhrgrlm);&#10;        ru (wrhgzmxvGlGzitvg &lt;= hglkkrmtWrhgzmxv)&#10;        {&#10;            // 已经足够接近，停止移动&#10;            ivgfim;&#10;        }&#10;&#10;        ru (xfiivmgDzbklrmg &gt;= yvarviKzgs.Xlfmg)&#10;        {&#10;            ivzxsvwVmwLuKzgs = gifv;&#10;            ivgfim;&#10;        }&#10;        vohv&#10;        {&#10;            ivzxsvwVmwLuKzgs = uzohv;&#10;        }&#10;        //移动到下一个路点&#10;        Evxgli7 mvcgDzbklrmgKlhrgrlm = yvarviKzgs[xfiivmgDzbklrmg];&#10;        // 使用插值平滑移动&#10;        gizmhulin.klhrgrlm = Evxgli7.NlevGldziwh(gizmhulin.klhrgrlm, mvcgDzbklrmgKlhrgrlm, nlevHkvvw * Grnv.wvogzGrnv);&#10;&#10;        // 转向逻辑&#10;        Evxgli7 wrivxgrlm = (mvcgDzbklrmgKlhrgrlm - (Evxgli7)gizmhulin.klhrgrlm).mlinzoravw;&#10;        ru (wrivxgrlm != Evxgli7.avil) // 避免朝向(9,9)方向&#10;        {&#10;            uolzg zmtov = Nzgsu.Zgzm7(wrivxgrlm.b, wrivxgrlm.c) * Nzgsu.Izw7Wvt;&#10;            Jfzgvimrlm gzitvgIlgzgrlm = Jfzgvimrlm.ZmtovZcrh(zmtov, Evxgli6.ulidziw);&#10;            gizmhulin.ilgzgrlm = Jfzgvimrlm.Hovik(gizmhulin.ilgzgrlm, gzitvgIlgzgrlm, gfimHkvvw * Grnv.wvogzGrnv);&#10;        }&#10;&#10;&#10;        // 检查是否到达当前路径点&#10;        ru (Evxgli7.Wrhgzmxv(gizmhulin.klhrgrlm, mvcgDzbklrmgKlhrgrlm) &lt; 9.8u)&#10;        {&#10;            xfiivmgDzbklrmg++;&#10;        }&#10;    }&#10;&#10;}" />
+                      <option name="end_line" value="148" />
+                      <option name="filename" value="EnemyAI.cs" />
+                      <option name="language" value="C#" />
+                      <option name="range">
+                        <Range>
+                          <option name="end">
+                            <Position>
+                              <option name="character" value="1" />
+                              <option name="line" value="148" />
+                            </Position>
+                          </option>
+                          <option name="start">
+                            <Position />
+                          </option>
+                        </Range>
+                      </option>
+                      <option name="type" value="editor" />
+                      <option name="url" value="file:///F:/游戏比赛/2025CUSGA/Client/Assets/Scripts/GamePlay/寻路系统/EnemyAI.cs" />
+                    </CodeReferencesBean>
+                  </list>
+                </option>
+                <option name="codebaseReferences">
+                  <list>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.ai.navigation@1.1.5\Tests\Editor\NavigationPresenceInMenus.cs: ﻿using System.Collections.Generic;&#10;using NUnit.Framework;&#10;using UnityEditor;&#10;using UnityEngine;&#10;namespace Unity.AI.Navigation.Editor.Tests&#10;{&#10;    [TestFixture]&#10;    [Description(&quot;Verifies that the desired Navigation editor menus are accessible with the package.&quot;)]&#10;    public class NavigationPresenceInMenus&#10;    {&#10;        GameObject m_ComponentsReceiver;&#10;        [OneTimeSetUp]&#10;        public void OneTimeSetUp()&#10;        {&#10;            // Create an empty game object and select it in order for components menus to be available&#10;            m_ComponentsReceiver = new GameObject(&quot;ComponentsReceiver&quot;);&#10;            Selection.activeObject = m_ComponentsReceiver;&#10;        }&#10;        static IEnumerable&lt;string&gt; NavigationMenuItemProvider()&#10;        {&#10;            yield return &quot;Component/Navigation/Nav Mesh Agent&quot;;&#10;            yield return &quot;Component/Navigation/Nav Mesh Obstacle&quot;;&#10;            yield return &quot;Component/Navigation/Off Mesh Link&quot;;&#10;            yield return &quot;Component/Navigation/NavMeshSurface&quot;;&#10;            yield return &quot;Component/Navigation/NavMeshModifierVolume&quot;;&#10;            yield return &quot;Component/Navigation/NavMeshModifier&quot;;&#10;            yield return &quot;Component/Navigation/NavMeshLink&quot;;&#10;            yield return &quot;Window/AI/Navigation&quot;;&#10;#if UNITY_2022_2_OR_NEWER&#10;            yield return &quot;Window/AI/Navigation (Obsolete)&quot;;&#10;#endif&#10;        }&#10;        [Test]&#10;        [TestCaseSource(nameof(NavigationMenuItemProvider))]" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="38" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.ai.navigation@1.1.5\Tests\Editor\NavigationPresenceInMenus.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.ai.navigation@1.1.5/Tests/Editor/NavigationPresenceInMenus.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="1" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\ResourceProviders\AssemblyResourceProvider.cs:     Ensure.That(nameof(path)).IsNotNull(path);&#10;    path = PreNormalizePath(path);&#10;    var normalizedDirectoryPath = NormalizeDirectoryPath(Path.GetDirectoryName(path));&#10;    var normalizedFileName = NormalizeFileName(Path.GetFileName(path));&#10;    var directory = GetDirectory(normalizedDirectoryPath, false);&#10;    return directory != null &amp;&amp; directory.files.Contains(normalizedFileName);&#10;}&#10;public bool DirectoryExists(string path)&#10;{&#10;    Ensure.That(nameof(path)).IsNotNull(path);&#10;    path = PreNormalizePath(path);&#10;    var normalizedDirectoryPath = NormalizeDirectoryPath(path);&#10;    return GetDirectory(normalizedDirectoryPath, false) != null;&#10;}&#10;private string PreNormalizePath(string path)&#10;{&#10;    Ensure.That(nameof(path)).IsNotNull(path);&#10;    var undottedPath = &quot;&quot;;&#10;    var directory = Path.GetDirectoryName(path);&#10;    if (!string.IsNullOrEmpty(directory))&#10;    {&#10;        undottedPath += directory.Replace('.', Path.DirectorySeparatorChar);&#10;        undottedPath += Path.DirectorySeparatorChar;&#10;    }&#10;    undottedPath += Path.GetFileNameWithoutExtension(path).Replace('.', Path.DirectorySeparatorChar);&#10;    undottedPath += Path.GetExtension(path);&#10;    return undottedPath;&#10;}&#10;private string NormalizeDirectoryPath(string directoryPath)&#10;{&#10;    Ensure.That(nameof(directoryPath)).IsNotNull(directoryPath);" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="150" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\ResourceProviders\AssemblyResourceProvider.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/ResourceProviders/AssemblyResourceProvider.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="105" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Dropdown.cs:         item.toggle.Select();&#10;    // Automatically set up explicit navigation&#10;    if (prev != null)&#10;    {&#10;        Navigation prevNav = prev.navigation;&#10;        Navigation toggleNav = item.toggle.navigation;&#10;        prevNav.mode = Navigation.Mode.Explicit;&#10;        toggleNav.mode = Navigation.Mode.Explicit;&#10;        prevNav.selectOnDown = item.toggle;&#10;        prevNav.selectOnRight = item.toggle;&#10;        toggleNav.selectOnLeft = prev;&#10;        toggleNav.selectOnUp = prev;&#10;        prev.navigation = prevNav;&#10;        item.toggle.navigation = toggleNav;&#10;    }&#10;    prev = item.toggle;&#10;}&#10;// Reposition all items now that all of them have been added&#10;Vector2 sizeDelta = contentRectTransform.sizeDelta;&#10;sizeDelta.y = itemSize.y * m_Items.Count + offsetMin.y - offsetMax.y;&#10;contentRectTransform.sizeDelta = sizeDelta;&#10;float extraSpace = dropdownRectTransform.rect.height - contentRectTransform.rect.height;&#10;if (extraSpace &gt; 0)&#10;    dropdownRectTransform.sizeDelta = new Vector2(dropdownRectTransform.sizeDelta.x, dropdownRectTransform.sizeDelta.y - extraSpace);&#10;// Invert anchoring and position if dropdown is partially or fully outside of canvas rect." />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="848" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Dropdown.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Dropdown.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="818" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.ugui@1.0.0\Editor\UI\ScrollbarEditor.cs:             scrollbar.SetDirection(direction, true);&#10;        }&#10;    }&#10;    EditorGUILayout.PropertyField(m_Value);&#10;    EditorGUILayout.PropertyField(m_Size);&#10;    EditorGUILayout.PropertyField(m_NumberOfSteps);&#10;    bool warning = false;&#10;    foreach (var obj in serializedObject.targetObjects)&#10;    {&#10;        Scrollbar scrollbar = obj as Scrollbar;&#10;        Scrollbar.Direction dir = scrollbar.direction;&#10;        if (dir == Scrollbar.Direction.LeftToRight || dir == Scrollbar.Direction.RightToLeft)&#10;            warning = (scrollbar.navigation.mode != Navigation.Mode.Automatic &amp;&amp; scrollbar.navigation.mode != Navigation.Mode.Horizontal &amp;&amp; (scrollbar.FindSelectableOnLeft() != null || scrollbar.FindSelectableOnRight() != null));&#10;        else&#10;            warning = (scrollbar.navigation.mode != Navigation.Mode.Automatic &amp;&amp; scrollbar.navigation.mode != Navigation.Mode.Vertical &amp;&amp; (scrollbar.FindSelectableOnDown() != null || scrollbar.FindSelectableOnUp() != null));&#10;    }&#10;    if (warning)&#10;        EditorGUILayout.HelpBox(&quot;The selected scrollbar direction conflicts with navigation. Not all navigation options may work.&quot;, MessageType.Warning);&#10;    EditorGUILayout.Space();&#10;    // Draw the event notification options&#10;    EditorGUILayout.PropertyField(m_OnValueChanged);&#10;}&#10;else&#10;{" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="101" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.ugui@1.0.0\Editor\UI\ScrollbarEditor.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/ScrollbarEditor.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="74" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\Bee\artifacts\1900b0aEDbg.dag\Unity.AI.Navigation.Editor.rsp: &quot;Library/PackageCache/com.unity.ai.navigation@1.1.5/Editor/NavigationWindow.cs&quot;&#10;&quot;Library/PackageCache/com.unity.ai.navigation@1.1.5/Editor/NavMeshAssetManager.cs&quot;&#10;&quot;Library/PackageCache/com.unity.ai.navigation@1.1.5/Editor/NavMeshComponentsGUIUtility.cs&quot;&#10;&quot;Library/PackageCache/com.unity.ai.navigation@1.1.5/Editor/NavMeshLinkEditor.cs&quot;&#10;&quot;Library/PackageCache/com.unity.ai.navigation@1.1.5/Editor/NavMeshModifierEditor.cs&quot;&#10;&quot;Library/PackageCache/com.unity.ai.navigation@1.1.5/Editor/NavMeshModifierVolumeEditor.cs&quot;&#10;&quot;Library/PackageCache/com.unity.ai.navigation@1.1.5/Editor/NavMeshSurfaceEditor.cs&quot;&#10;&quot;Library/PackageCache/com.unity.ai.navigation@1.1.5/Editor/ObsoleteNavigationWindowMenuEntry.cs&quot;&#10;-langversion:9.0&#10;/deterministic&#10;/optimize-&#10;/debug:portable&#10;/nologo&#10;/RuntimeMetadataVersion:v4.0.30319&#10;/nowarn:0169&#10;/nowarn:0649&#10;/nowarn:0282&#10;/nowarn:1701&#10;/nowarn:1702&#10;/utf8output" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="395" />
+                          <option name="fileName" value="Library\Bee\artifacts\1900b0aEDbg.dag\Unity.AI.Navigation.Editor.rsp" />
+                          <option name="source" value="$PROJECT_DIR$/Library/Bee/artifacts/1900b0aEDbg.dag/Unity.AI.Navigation.Editor.rsp" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="376" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.ugui@1.0.0\Editor\UI\PropertyDrawers\NavigationDrawer.cs:             drawRect.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;&#10;        }&#10;        break;&#10;    }&#10;    --EditorGUI.indentLevel;&#10;}&#10;static Navigation.Mode GetNavigationMode(SerializedProperty navigation)&#10;{&#10;    return (Navigation.Mode)navigation.enumValueIndex;&#10;}&#10;public override float GetPropertyHeight(SerializedProperty prop, GUIContent label)&#10;{&#10;    SerializedProperty navigation = prop.FindPropertyRelative(kModeProp);&#10;    if (navigation == null)&#10;        return EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;&#10;    Navigation.Mode navMode = GetNavigationMode(navigation);&#10;    switch (navMode)&#10;    {&#10;        case Navigation.Mode.None:&#10;            return EditorGUIUtility.singleLineHeight;&#10;        case Navigation.Mode.Horizontal:&#10;        case Navigation.Mode.Vertical:&#10;            return 2 * EditorGUIUtility.singleLineHeight + 2 * EditorGUIUtility.standardVerticalSpacing;&#10;        case Navigation.Mode.Explicit:&#10;            return 5 * EditorGUIUtility.singleLineHeight + 5 * EditorGUIUtility.standardVerticalSpacing;&#10;        default:&#10;            return EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;&#10;    }&#10;}&#10;PropertyField PrepareField(VisualElement parent, string propertyPath, bool hideable = true, string label = null)&#10;{&#10;    var field = new PropertyField(null, label) { bindingPath = propertyPath };&#10;    if (hideable) field.AddToClassList(kHiddenClass);&#10;    parent.Add(field);" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="118" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.ugui@1.0.0\Editor\UI\PropertyDrawers\NavigationDrawer.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/PropertyDrawers/NavigationDrawer.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="79" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value=".vs\Client\v17\DocumentLayout.backup.json:   &quot;DocumentIndex&quot;: 4,&#10;  &quot;Title&quot;: &quot;Pathfinding.cs&quot;,&#10;  &quot;DocumentMoniker&quot;: &quot;F:\\\u6E38\u620F\u6BD4\u8D5B\\2025CUSGA\\Client\\Assets\\Scripts\\\u5BFB\u8DEF\u7CFB\u7EDF\\Pathfinding.cs&quot;,&#10;  &quot;RelativeDocumentMoniker&quot;: &quot;Assets\\Scripts\\\u5BFB\u8DEF\u7CFB\u7EDF\\Pathfinding.cs&quot;,&#10;  &quot;ToolTip&quot;: &quot;F:\\\u6E38\u620F\u6BD4\u8D5B\\2025CUSGA\\Client\\Assets\\Scripts\\\u5BFB\u8DEF\u7CFB\u7EDF\\Pathfinding.cs&quot;,&#10;  &quot;RelativeToolTip&quot;: &quot;Assets\\Scripts\\\u5BFB\u8DEF\u7CFB\u7EDF\\Pathfinding.cs&quot;,&#10;  &quot;ViewState&quot;: &quot;AgIAAIUAAAAAAAAAAAAcwJ0AAAAZAAAAAAAAAA==&quot;,&#10;  &quot;Icon&quot;: &quot;ae27a6b0-e345-4288-96df-5eaf394ee369.000738|&quot;,&#10;  &quot;WhenOpened&quot;: &quot;2025-03-02T13:59:43.975Z&quot;&#10;},&#10;{" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="102" />
+                          <option name="fileName" value=".vs\Client\v17\DocumentLayout.backup.json" />
+                          <option name="source" value="$PROJECT_DIR$/.vs/Client/v17/DocumentLayout.backup.json" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="92" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\ResourceProviders\AssetBundleResourceProvider.cs: {&#10;    Ensure.That(nameof(path)).IsNotNull(path);&#10;    path = NormalizePath(path);&#10;    var directory = GetDirectory(path, true);&#10;    foreach (var subDirectory in directory.subDirectories)&#10;    {&#10;        yield return subDirectory.Value.path;&#10;    }&#10;}&#10;public string GetPersonalPath(string path, float width)&#10;{&#10;    var name = Path.GetFileNameWithoutExtension(path).PartBefore('@');&#10;    var extension = Path.GetExtension(path);&#10;    var directory = Path.GetDirectoryName(path);&#10;    return Path.Combine(directory, $&quot;{name}@{width}x{extension}&quot;);&#10;}&#10;public string GetProfessionalPath(string path, float width)&#10;{&#10;    var name = Path.GetFileNameWithoutExtension(path).PartBefore('@');&#10;    var extension = Path.GetExtension(path);&#10;    var directory = Path.GetDirectoryName(path);&#10;    return Path.Combine(directory, $&quot;{name}_Pro@{width}x{extension}&quot;);&#10;}&#10;public bool FileExists(string path)&#10;{&#10;    Ensure.That(nameof(path)).IsNotNull(path);&#10;    var directoryPath = NormalizePath(Path.GetDirectoryName(path));&#10;    var fileName = NormalizePath(Path.GetFileName(path));&#10;    var directory = GetDirectory(directoryPath, false);" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="105" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\ResourceProviders\AssetBundleResourceProvider.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/ResourceProviders/AssetBundleResourceProvider.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="67" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.ugui@1.0.0\Tests\Editor\UI\PropertyDrawers\PropertyDrawerTests.cs:     Assert.IsNotNull(window.rootVisualElement.Q(&quot;ExposedReference&quot;), $&quot;Item is null. Root object count: {window.rootVisualElement.childCount}&quot;);&#10;}&#10;// Fake expected result in order to make TestCaseAttribute to work with UnityTest&#10;[UnityTest]&#10;[TestCase(new object[] { (int)Navigation.Mode.None, 0}, ExpectedResult = null)]&#10;[TestCase(new object[] { (int)Navigation.Mode.Horizontal, 1 }, ExpectedResult = null)]&#10;[TestCase(new object[] { (int)Navigation.Mode.Vertical, 1 }, ExpectedResult = null)]&#10;[TestCase(new object[] { (int)Navigation.Mode.Automatic, 0 }, ExpectedResult = null)]&#10;[TestCase(new object[] { (int)Navigation.Mode.Explicit, 4 }, ExpectedResult = null)]&#10;[TestCase(new object[] { (int)(Navigation.Mode.Explicit | Navigation.Mode.Horizontal), 0 }, ExpectedResult = null)]&#10;[TestCase(new object[] { (int)(Navigation.Mode.Automatic | Navigation.Mode.Explicit), 0 }, ExpectedResult = null)]&#10;public static IEnumerator NavigationDrawer_ShowsCorrectAdditionalControlCount(int mode, int expectedCount)&#10;{" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="106" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.ugui@1.0.0\Tests\Editor\UI\PropertyDrawers\PropertyDrawerTests.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/UI/PropertyDrawers/PropertyDrawerTests.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="93" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.test-framework@1.1.33\UnityEditor.TestRunner\GUI\Views\PlayModeTestListGUI.cs: using System;&#10;using System.IO;&#10;using System.Linq;&#10;using UnityEditor.SceneManagement;&#10;using UnityEditor.TestTools.TestRunner.Api;&#10;using UnityEngine;&#10;using UnityEngine.TestTools;&#10;namespace UnityEditor.TestTools.TestRunner.GUI&#10;{&#10;    [Serializable]&#10;    internal class PlayModeTestListGUI : TestListGUI&#10;    {&#10;        private struct PlayerMenuItem&#10;        {&#10;            public GUIContent name;&#10;            public bool filterSelectedTestsOnly;&#10;            public bool buildOnly;&#10;        }&#10;        [SerializeField]&#10;        private int m_SelectedOption;&#10;        public override TestMode TestMode&#10;        {&#10;            get { return TestMode.PlayMode; }&#10;        }&#10;        private string GetBuildText()&#10;        {&#10;            switch (EditorUserBuildSettings.activeBuildTarget)&#10;            {&#10;                case BuildTarget.Android:&#10;                    if (EditorUserBuildSettings.exportAsGoogleAndroidProject)&#10;                        return &quot;Export&quot;;&#10;                    break;&#10;                case BuildTarget.iOS:&#10;                    return &quot;Export&quot;;&#10;            }&#10;            return &quot;Build&quot;;&#10;        }&#10;        private string PickBuildLocation()&#10;        {&#10;            var target = EditorUserBuildSettings.activeBuildTarget;&#10;            var targetGroup = BuildPipeline.GetBuildTargetGroup(target);&#10;            var lastLocation = EditorUserBuildSettings.GetBuildLocation(target);&#10;            var extension = PostprocessBuildPlayer.GetExtensionForBuildTarget(targetGroup, target, BuildOptions.None);&#10;            var defaultName = FileUtil.GetLastPathNameComponent(lastLocation);&#10;            lastLocation = string.IsNullOrEmpty(lastLocation) ? string.Empty : Path.GetDirectoryName(lastLocation);&#10;            bool updateExistingBuild;" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="51" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.test-framework@1.1.33\UnityEditor.TestRunner\GUI\Views\PlayModeTestListGUI.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/GUI/Views/PlayModeTestListGUI.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="1" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.ugui@1.0.0\Tests\Runtime\ScrollRect\ScrollRectTests.cs: [TestCase(ScrollRect.MovementType.Clamped, 1f, 1f)]&#10;[TestCase(ScrollRect.MovementType.Unrestricted, 150, 150)]&#10;[TestCase(ScrollRect.MovementType.Elastic, 150, 150)]&#10;public void OnScrollClampedShouldClampContentAnchoredPosition(ScrollRect.MovementType movementType, float anchoredPosX,&#10;    float anchoredPosY)&#10;{&#10;    ScrollRect scrollRect = m_PrefabRoot.GetComponentInChildren&lt;ScrollRect&gt;();&#10;    Vector2 scrollDelta = new Vector2(50, -50);&#10;    scrollRect.movementType = movementType;&#10;    scrollRect.content.anchoredPosition = new Vector2(2.5f, 2.5f);&#10;    scrollRect.OnScroll(new PointerEventData(m_PrefabRoot.GetComponentInChildren&lt;EventSystem&gt;())&#10;    {&#10;        scrollDelta = scrollDelta&#10;    });&#10;    Assert.AreEqual(new Vector2(anchoredPosX, anchoredPosY), scrollRect.content.anchoredPosition);&#10;}&#10;[Test]&#10;public void GetBoundsShouldEncapsulateAllCorners()&#10;{&#10;    Matrix4x4 matrix = Matrix4x4.identity;&#10;    object[] arguments = new object[2]&#10;    {&#10;        new Vector3[] { Vector3.zero, Vector3.one, Vector3.one * 2, Vector3.one },&#10;        matrix&#10;    };" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="347" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.ugui@1.0.0\Tests\Runtime\ScrollRect\ScrollRectTests.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/ScrollRect/ScrollRectTests.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="321" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.ugui@1.0.0\Tests\Runtime\ScrollRect\ScrollRectTests.cs:     scrollRect.movementType = ScrollRect.MovementType.Clamped;&#10;    yield return null;&#10;    Assert.Less(scrollRect.velocity.magnitude, 1);&#10;}&#10;[UnityTest][Ignore(&quot;Fails&quot;)]&#10;public IEnumerator LateUpdateWithElasticShouldDecelerate()&#10;{&#10;    ScrollRect scrollRect = m_PrefabRoot.GetComponentInChildren&lt;ScrollRect&gt;();&#10;    scrollRect.velocity = Vector2.one;&#10;    scrollRect.inertia = false;&#10;    scrollRect.content.anchoredPosition = Vector2.one * 2;&#10;    scrollRect.movementType = ScrollRect.MovementType.Elastic;&#10;    yield return null;&#10;    Assert.AreNotEqual(1, scrollRect.velocity.magnitude);&#10;    var newMagnitude = scrollRect.velocity.magnitude;&#10;    yield return null;&#10;    Assert.AreNotEqual(newMagnitude, scrollRect.velocity.magnitude);&#10;}&#10;[UnityTest]&#10;public IEnumerator LateUpdateWithElasticNoOffsetShouldZeroVelocity()&#10;{&#10;    ScrollRect scrollRect = m_PrefabRoot.GetComponentInChildren&lt;ScrollRect&gt;();&#10;    scrollRect.velocity = Vector2.one;&#10;    scrollRect.inertia = false;&#10;    scrollRect.movementType = ScrollRect.MovementType.Elastic;&#10;    yield return null;&#10;    Assert.AreEqual(Vector2.zero, scrollRect.velocity);&#10;}&#10;#endregion&#10;[Test]&#10;public void SetNormalizedPositionShouldSetContentLocalPosition()&#10;{&#10;    ScrollRect scrollRect = m_PrefabRoot.GetComponentInChildren&lt;ScrollRect&gt;();" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="291" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.ugui@1.0.0\Tests\Runtime\ScrollRect\ScrollRectTests.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/ScrollRect/ScrollRectTests.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="253" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.ugui@1.0.0\Tests\Runtime\Graphic\NavigationTests.cs:     Assert.AreEqual(topLeftSelectable, selectableRightOfBottomRight, &quot;Wrong selectable to right of Bottom Right Selectable&quot;);&#10;}&#10;[Test]&#10;public void FindSelectableOnLeft_WrappingEnabled_ReturnsFurthestSelectableOnRight()&#10;{&#10;    Navigation nav = topLeftSelectable.navigation;&#10;    nav.wrapAround = true;&#10;    nav.mode = Navigation.Mode.Horizontal;&#10;    topLeftSelectable.navigation = nav;&#10;    nav = bottomLeftSelectable.navigation;&#10;    nav.wrapAround = true;&#10;    nav.mode = Navigation.Mode.Horizontal;&#10;    bottomLeftSelectable.navigation = nav;&#10;    Selectable selectableLeftOfTopLeft = topLeftSelectable.FindSelectableOnLeft();&#10;    Selectable selectableLeftOfBottomLeft = bottomLeftSelectable.FindSelectableOnLeft();&#10;    Assert.AreEqual(bottomRightSelectable, selectableLeftOfTopLeft, &quot;Wrong selectable to left of Top Left Selectable&quot;);&#10;    Assert.AreEqual(topRightSelectable, selectableLeftOfBottomLeft, &quot;Wrong selectable to left of Bottom Left Selectable&quot;);&#10;}&#10;[Test]&#10;public void FindSelectableOnDown_WrappingEnabled_ReturnsFurthestSelectableAbove()&#10;{&#10;    Navigation nav = bottomLeftSelectable.navigation;&#10;    nav.wrapAround = true;&#10;    nav.mode = Navigation.Mode.Vertical;&#10;    bottomLeftSelectable.navigation = nav;&#10;    nav = bottomRightSelectable.navigation;&#10;    nav.wrapAround = true;&#10;    nav.mode = Navigation.Mode.Vertical;&#10;    bottomRightSelectable.navigation = nav;&#10;    Selectable selectableDownOfBottomLeft = bottomLeftSelectable.FindSelectableOnDown();" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="142" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.ugui@1.0.0\Tests\Runtime\Graphic\NavigationTests.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Graphic/NavigationTests.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="106" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value=".vs\Client\v17\DocumentLayout.json:   &quot;Title&quot;: &quot;Pathfinding.cs&quot;,&#10;  &quot;DocumentMoniker&quot;: &quot;F:\\\u6E38\u620F\u6BD4\u8D5B\\2025CUSGA\\Client\\Assets\\Scripts\\\u5BFB\u8DEF\u7CFB\u7EDF\\Pathfinding.cs&quot;,&#10;  &quot;RelativeDocumentMoniker&quot;: &quot;Assets\\Scripts\\\u5BFB\u8DEF\u7CFB\u7EDF\\Pathfinding.cs&quot;,&#10;  &quot;ToolTip&quot;: &quot;F:\\\u6E38\u620F\u6BD4\u8D5B\\2025CUSGA\\Client\\Assets\\Scripts\\\u5BFB\u8DEF\u7CFB\u7EDF\\Pathfinding.cs&quot;,&#10;  &quot;RelativeToolTip&quot;: &quot;Assets\\Scripts\\\u5BFB\u8DEF\u7CFB\u7EDF\\Pathfinding.cs&quot;,&#10;  &quot;ViewState&quot;: &quot;AgIAAIUAAAAAAAAAAAAcwJ0AAAAZAAAAAAAAAA==&quot;,&#10;  &quot;Icon&quot;: &quot;ae27a6b0-e345-4288-96df-5eaf394ee369.000738|&quot;,&#10;  &quot;WhenOpened&quot;: &quot;2025-03-02T13:59:43.975Z&quot;,&#10;  &quot;EditorCaption&quot;: &quot;&quot;&#10;},&#10;{" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="103" />
+                          <option name="fileName" value=".vs\Client\v17\DocumentLayout.json" />
+                          <option name="source" value="$PROJECT_DIR$/.vs/Client/v17/DocumentLayout.json" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="93" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Localization\ja.po: #: [MenuItem]./Editor/Signals/SignalAssetInspector.cs:1&#10;msgid &quot;Signal&quot;&#10;msgstr &quot;シグナル&quot;&#10;#: [MenuEntry]./Editor/Attributes/MenuEntryAttribute.cs:1&#10;msgid &quot;Simple Menu Action&quot;&#10;msgstr &quot;シンプルメニューアクション&quot;&#10;#: [MenuEntry]./Tests/Editor/Actions/ClipActionTests.cs:1&#10;msgid &quot;Simple With Menu Entry Custom Clip Test Action&quot;&#10;msgstr &quot;Simple With Menu Entry Custom Clip Test Action&quot;&#10;#: [MenuEntry]./Tests/Editor/Actions/MarkerActionTests.cs:1&#10;msgid &quot;Simple With Menu Entry Custom Marker Test Action&quot;&#10;msgstr &quot;Simple With Menu Entry Custom Marker Test Action&quot;&#10;#: [MenuEntry]./Tests/Editor/Actions/TimelineActionTests.cs:1&#10;msgid &quot;Simple With Menu Entry Custom Timeline Test Action&quot;&#10;msgstr &quot;Simple With Menu Entry Custom Timeline Test Action&quot;&#10;#: [MenuEntry]./Tests/Editor/Actions/TrackActionTests.cs:1&#10;msgid &quot;Simple With Menu Entry Custom Track Test Action&quot;&#10;msgstr &quot;Simple With Menu Entry Custom Track Test Action&quot;&#10;#: Editor/inspectors/TimelinePreferences.cs:1&#10;msgid &quot;Snap To Frame&quot;&#10;msgstr &quot;フレームにスナップ&quot;&#10;#: Editor/Playables/ControlPlayableInspector.cs:1&#10;msgid &quot;Source Object&quot;&#10;msgstr &quot;ソースオブジェクト&quot;&#10;#: Editor/inspectors/TimelineAssetInspector.cs:1" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="1246" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Localization\ja.po" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.7.6/Editor/Localization/ja.po" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="1214" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.collab-proxy@2.7.1\Editor\Views\Merge\Developer\DirectoryConflicts\MergeViewDirectoryConflictMenu.cs:         }&#10;        IDirectoryConflictMenu GetLoadedTwiceMenu()&#10;        {&#10;            if (mLoadedTwiceMenu == null)&#10;                 mLoadedTwiceMenu = new LoadedTwiceMenu(mMergeViewMenuOperations);&#10; &#10;            return mLoadedTwiceMenu;&#10;        }&#10;        IDirectoryConflictMenu GetMoveAddMenu()&#10;        {&#10;            if (mMoveAddMenu == null)&#10;                mMoveAddMenu = new MoveAddMenu(mMergeViewMenuOperations);&#10;            return mMoveAddMenu;&#10;        }&#10;        IDirectoryConflictMenu GetMoveDeleteMenu()&#10;        {&#10;            if (mMoveDeleteMenu == null)&#10;                mMoveDeleteMenu = new MoveDeleteMenu(mMergeViewMenuOperations);&#10;            return mMoveDeleteMenu;&#10;        }&#10;        IDirectoryConflictMenu GetMovedEvilTwinMenu()&#10;        {&#10;            if (mMovedEvilTwinMenu == null)&#10;                mMovedEvilTwinMenu = new MovedEvilTwinMenu(mMergeViewMenuOperations);&#10;            return mMovedEvilTwinMenu;&#10;        }&#10;        IDirectoryConflictMenu mDirectoryConflictMenu;&#10;        AddMoveMenu mAddMoveMenu;&#10;        ChangeDeleteMenu mChangeDeleteMenu;&#10;        CycleMoveMenu mCycleMoveMenu;&#10;        DeleteChangeMenu mDeleteChangeMenu;&#10;        DeleteMoveMenu mDeleteMoveMenu;&#10;        DivergentMoveMenu mDivergentMoveMenu;&#10;        EvilTwinMenu mEvilTwinMenu;&#10;        LoadedTwiceMenu mLoadedTwiceMenu;&#10;        MoveAddMenu mMoveAddMenu;&#10;        MoveDeleteMenu mMoveDeleteMenu;&#10;        MovedEvilTwinMenu mMovedEvilTwinMenu;&#10;        readonly IMergeViewMenuOperations mMergeViewMenuOperations;&#10;    }&#10;}" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="190" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.collab-proxy@2.7.1\Editor\Views\Merge\Developer\DirectoryConflicts\MergeViewDirectoryConflictMenu.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@2.7.1/Editor/Views/Merge/Developer/DirectoryConflicts/MergeViewDirectoryConflictMenu.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="140" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.ugui@1.0.0\Editor\UI\PropertyDrawers\NavigationDrawer.cs: using System;&#10;using UnityEditor.UIElements;&#10;using UnityEngine;&#10;using UnityEngine.UI;&#10;using UnityEngine.UIElements;&#10;namespace UnityEditor.UI&#10;{&#10;    [CustomPropertyDrawer(typeof(Navigation), true)]&#10;    /// &lt;summary&gt;&#10;    /// This is a PropertyDrawer for Navigation. It is implemented using the standard Unity PropertyDrawer framework.&#10;    /// &lt;/summary&gt;&#10;    public class NavigationDrawer : PropertyDrawer&#10;    {&#10;        const string kNavigation = &quot;Navigation&quot;;&#10;        const string kModeProp = &quot;m_Mode&quot;;&#10;        const string kWrapAroundProp = &quot;m_WrapAround&quot;;&#10;        const string kSelectOnUpProp = &quot;m_SelectOnUp&quot;;&#10;        const string kSelectOnDownProp = &quot;m_SelectOnDown&quot;;&#10;        const string kSelectOnLeftProp = &quot;m_SelectOnLeft&quot;;&#10;        const string kSelectOnRightProp = &quot;m_SelectOnRight&quot;;&#10;        const string kHiddenClass = &quot;unity-ui-navigation-hidden&quot;;&#10;        private class Styles&#10;        {&#10;            readonly public GUIContent navigationContent;&#10;            public Styles()&#10;            {&#10;                navigationContent = EditorGUIUtility.TrTextContent(kNavigation);&#10;            }&#10;        }&#10;        private static Styles s_Styles = null;&#10;        public override void OnGUI(Rect pos, SerializedProperty prop, GUIContent label)&#10;        {&#10;            if (s_Styles == null)&#10;                s_Styles = new Styles();&#10;            Rect drawRect = pos;&#10;            drawRect.height = EditorGUIUtility.singleLineHeight;" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="44" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.ugui@1.0.0\Editor\UI\PropertyDrawers\NavigationDrawer.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/PropertyDrawers/NavigationDrawer.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="1" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.ugui@1.0.0\Editor\UI\PropertyDrawers\NavigationDrawer.cs: SerializedProperty navigation = prop.FindPropertyRelative(kModeProp);&#10;SerializedProperty wrapAround = prop.FindPropertyRelative(kWrapAroundProp);&#10;Navigation.Mode navMode = GetNavigationMode(navigation);&#10;EditorGUI.PropertyField(drawRect, navigation, s_Styles.navigationContent);&#10;++EditorGUI.indentLevel;&#10;drawRect.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;&#10;switch (navMode)&#10;{&#10;    case Navigation.Mode.Horizontal:&#10;    case Navigation.Mode.Vertical:&#10;    {&#10;        EditorGUI.PropertyField(drawRect, wrapAround);&#10;        drawRect.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;&#10;    }&#10;    break;&#10;    case Navigation.Mode.Explicit:&#10;    {&#10;        SerializedProperty selectOnUp = prop.FindPropertyRelative(kSelectOnUpProp);&#10;        SerializedProperty selectOnDown = prop.FindPropertyRelative(kSelectOnDownProp);&#10;        SerializedProperty selectOnLeft = prop.FindPropertyRelative(kSelectOnLeftProp);&#10;        SerializedProperty selectOnRight = prop.FindPropertyRelative(kSelectOnRightProp);&#10;        EditorGUI.PropertyField(drawRect, selectOnUp);&#10;        drawRect.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;&#10;        EditorGUI.PropertyField(drawRect, selectOnDown);&#10;        drawRect.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;&#10;        EditorGUI.PropertyField(drawRect, selectOnLeft);&#10;        drawRect.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;&#10;        EditorGUI.PropertyField(drawRect, selectOnRight);" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="78" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.ugui@1.0.0\Editor\UI\PropertyDrawers\NavigationDrawer.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/PropertyDrawers/NavigationDrawer.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="46" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\Localization\basecommands.zh-Hans.txt: == 存储库选择器 #{0} ==&#10;== MessageRepositoryName ==&#10;选择存储库名称： &#10;== MessageRepositoryServer ==&#10;选择存储库服务器： &#10;== MessageSelectorNotSet ==&#10;尚未设置选择器。&#10;== Mkattr ==&#10;允许用户创建属性&#10;== Mkchildbranch ==&#10;允许用户创建子分支&#10;== Mklabel ==&#10;允许用户创建标签&#10;== Mkrepository ==&#10;允许用户创建存储库&#10;== Mktoplevelbranch ==&#10;允许用户创建顶级分支&#10;== Mktrigger ==&#10;允许用户创建触发器&#10;== Modified ==&#10;已修改&#10;== Move ==&#10;控制是否可以在存储库中移动文件和目录&#10;== MoveAddConflictAction1 ==&#10;保留这两种更改，将目标重命名为&#10;== MoveAddConflictAction2 ==&#10;保留源更改（保留移动并放弃添加）&#10;== MoveAddConflictAction3 ==&#10;保留目标更改（保留添加并放弃移动）&#10;== MoveAndAdd ==&#10;移动/添加冲突&#10;== MoveAndDelete ==&#10;移动/删除冲突&#10;== MoveDeleteConflictActions1 ==&#10;保留源更改（保留移动并放弃删除）&#10;== MoveDeleteConflictActions2 ==&#10;保留目标更改（保留删除并放弃移动）&#10;== MoveDeleteConflictDestinationOperation ==&#10;已删除 {0}&#10;== MoveDeleteConflictExplanation ==&#10;一个项在源上已移动，且目标已删除该项或其父级。&#10;== MoveDeleteConflictSourceOperation ==&#10;已从 {0} 移动到 {1}&#10;== MoveIgnoredDestinationWasntSelected ==&#10;不会移动项 '{0}'，因为未选择移动的目标 '{1}'。请更新工作区或选择移动的源和目标，然后重试该操作。&#10;== MoveIgnoredSourceWasntSelected ==&#10;不会移动项 '{0}'，因为虽然选择了移动的目标 '{1}'，但未选择该项。请更新工作区或选择移动的源和目标，然后重试该操作。&#10;== MoveItemAlreadyChanged ==&#10;不会移动该项，因为在工作区 '{0}' 中已更改（已签出、已在本地更改、已删除、已移动或已还原）该项。请撤销或签入本地更改，然后重试该操作。&#10;== MoveNotApplicable ==&#10;无法将该项移动到 '{0}'。可能的原因是目标路径已被使用。请卸载该项（从配置视图中），然后重试该操作。&#10;== MoveSourceDelete ==&#10;移出已删除项冲突&#10;== MoveSourceDeleteConflictDestinationOperation ==&#10;已删除 {0}&#10;== MoveSourceDeleteConflictSourceOperation ==&#10;已从 {0} 移动到 {1}&#10;== Moved ==&#10;已移动&#10;== MovedAddedConflictDestinationOperation ==&#10;已添加 {0}&#10;== MovedAddedConflictExplanation ==&#10;一个项在源上已移动，并在目标上的同一位置添加了一个同名的项。&#10;== MovedAddedConflictSourceOperation ==" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="1820" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.collab-proxy@2.7.1\Lib\Editor\Localization\basecommands.zh-Hans.txt" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@2.7.1/Lib/Editor/Localization/basecommands.zh-Hans.txt" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="1725" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.timeline@1.7.6\Samples~\Customization\Video\VideoPlayableBehaviour.cs:         shouldBePlaying = false;&#10;    if (shouldBePlaying)&#10;    {&#10;        // this will use the timeline time to prevent drift&#10;        videoPlayer.timeReference = VideoTimeReference.ExternalTime;&#10;        if (!videoPlayer.isPlaying)&#10;            videoPlayer.Play();&#10;        videoPlayer.externalReferenceTime = playable.GetTime() / videoPlayer.playbackSpeed;&#10;    }&#10;    else&#10;    {&#10;        videoPlayer.timeReference = VideoTimeReference.Freerun;&#10;        if (!videoPlayer.isPaused)&#10;            videoPlayer.Pause();&#10;        SyncVideoToPlayable(playable);&#10;    }&#10;    // use the accumulated blend value to set the alpha and the audio volume&#10;    videoPlayer.targetCameraAlpha = info.effectiveWeight;&#10;    if (videoPlayer.audioOutputMode == VideoAudioOutputMode.Direct)&#10;    {&#10;        for (ushort i = 0; i &lt; videoPlayer.clip.audioTrackCount; ++i)&#10;            videoPlayer.SetDirectAudioVolume(i, info.effectiveWeight);&#10;    }&#10;}&#10;// Called when the clip becomes active.&#10;public override void OnBehaviourPlay(Playable playable, FrameData info)&#10;{&#10;    if (videoPlayer == null)&#10;        return;&#10;    SyncVideoToPlayable(playable);&#10;    videoPlayer.playbackSpeed = Mathf.Clamp(info.effectiveSpeed, 1 / 10f, 10f);&#10;    videoPlayer.Play();&#10;    preparing = false;&#10;}&#10;// Called when the clip becomes inactive OR the timeline is 'paused'" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="81" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.timeline@1.7.6\Samples~\Customization\Video\VideoPlayableBehaviour.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.7.6/Samples~/Customization/Video/VideoPlayableBehaviour.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="42" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.inputsystem@1.11.2\InputSystem\Plugins\PlayerInput\PlayerInputManager.cs: /// Spawn a new player from &lt;see cref=&quot;playerPrefab&quot;/&gt;.&#10;/// &lt;/summary&gt;&#10;/// &lt;param name=&quot;playerIndex&quot;&gt;Optional explicit &lt;see cref=&quot;PlayerInput.playerIndex&quot;/&gt; to assign to the player. Must be unique within&#10;/// &lt;see cref=&quot;PlayerInput.all&quot;/&gt;. If not supplied, a player index will be assigned automatically (smallest unused index will be used).&lt;/param&gt;&#10;/// &lt;param name=&quot;splitScreenIndex&quot;&gt;Optional &lt;see cref=&quot;PlayerInput.splitScreenIndex&quot;/&gt;. If supplied, this assigns a split-screen area to the player. For example,&#10;/// a split-screen index of &lt;/param&gt;&#10;/// &lt;param name=&quot;controlScheme&quot;&gt;Control scheme to activate on the player (optional). If not supplied, a control scheme will&#10;/// be selected based on &lt;paramref name=&quot;pairWithDevices&quot;/&gt;. If no device is given either, the first control scheme that matches&#10;/// the currently available unpaired devices (see &lt;see cref=&quot;InputUser.GetUnpairedInputDevices()&quot;/&gt;) is used.&lt;/param&gt;&#10;/// &lt;param name=&quot;pairWithDevices&quot;&gt;Devices to pair to the player. Also determines which control scheme to use if &lt;paramref name=&quot;controlScheme&quot;/&gt;&#10;/// is not given.&lt;/param&gt;" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="451" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.inputsystem@1.11.2\InputSystem\Plugins\PlayerInput\PlayerInputManager.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.11.2/InputSystem/Plugins/PlayerInput/PlayerInputManager.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="441" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Navigation.cs: ///         // switch mode to Explicit to allow for custom assigned behavior&#10;///         navigation.mode = Navigation.Mode.Explicit;&#10;///&#10;///         // highlight the Save button if the right arrow key is pressed&#10;///         navigation.selectOnRight = btnSave;&#10;///&#10;///         // reassign the struct data to the button&#10;///         btnLoad.navigation = navigation;&#10;///     }&#10;/// }&#10;/// ]]&gt;&#10;///&lt;/code&gt;&#10;/// &lt;/example&gt;&#10;public Selectable selectOnRight  { get { return m_SelectOnRight; } set { m_SelectOnRight = value; } }&#10;/// &lt;summary&gt;&#10;/// Return a Navigation with sensible default values.&#10;/// &lt;/summary&gt;&#10;/// &lt;example&gt;&#10;/// &lt;code&gt;&#10;/// &lt;![CDATA[&#10;/// using UnityEngine;&#10;/// using System.Collections;&#10;/// using UnityEngine.UI; // Required when Using UI elements.&#10;///&#10;/// public class ExampleClass : MonoBehaviour&#10;/// {&#10;///     public Button button;&#10;///&#10;///     void Start()&#10;///     {&#10;///         //Set the navigation to the default value. (&quot;Automatic&quot; is the default value).&#10;///         button.navigation = Navigation.defaultNavigation;&#10;///     }&#10;/// }" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="284" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Navigation.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Navigation.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="250" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.inputsystem@1.11.2\InputSystem\NativeInputRuntime.cs:         // This is a hot-fix for a critical problem in input system, case 1368559, case 1367556, case 1372830&#10;        // TODO move it to a proper native callback instead&#10;        if (value != null)&#10;        {&#10;            // Inject ourselves directly to PlayerLoop.Initialization as first subsystem to run,&#10;            // Use InputSystemPlayerLoopRunnerInitializationSystem as system type&#10;            var playerLoop = UnityEngine.LowLevel.PlayerLoop.GetCurrentPlayerLoop();&#10;            var initStepIndex = playerLoop.subSystemList.IndexOf(x =&gt; x.type == typeof(PlayerLoop.Initialization));&#10;            if (initStepIndex &gt;= 0)&#10;            {&#10;                var systems = playerLoop.subSystemList[initStepIndex].subSystemList;&#10;                // Check if we're not already injected&#10;                if (!systems.Select(x =&gt; x.type)&#10;                    .Contains(typeof(InputSystemPlayerLoopRunnerInitializationSystem)))&#10;                {&#10;                    ArrayHelpers.InsertAt(ref systems, 0, new UnityEngine.LowLevel.PlayerLoopSystem&#10;                    {&#10;                        type = typeof(InputSystemPlayerLoopRunnerInitializationSystem),&#10;                        updateDelegate = () =&gt; m_PlayerLoopInitialization?.Invoke()&#10;                    });&#10;                    playerLoop.subSystemList[initStepIndex].subSystemList = systems;&#10;                    UnityEngine.LowLevel.PlayerLoop.SetPlayerLoop(playerLoop);&#10;                }&#10;            }&#10;        }&#10;        m_PlayerLoopInitialization = value;&#10;    }&#10;}&#10;#endif&#10;public Action&lt;int, string&gt; onDeviceDiscovered&#10;{" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="166" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.inputsystem@1.11.2\InputSystem\NativeInputRuntime.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.11.2/InputSystem/NativeInputRuntime.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="132" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.ai.navigation@1.1.5\Documentation~\Reference.md: # Navigation user interface &#10;The Navigation user interface consists of the Navigation window, AI Navigation overlay, AI Navigation Editor Preferences and several components for building a NavMesh. The NavMesh building components provide you with additional controls that allow you to generate and use NavMeshes at runtime and in the Unity Editor.&#10;| **Topic**             | **Description**         |&#10;| :-------------------- | :----------------------- |&#10;| [**Navigation window**](NavigationWindow.md) | Define the types of agents and areas in your game world. |&#10;| [**AI Navigation preferences**](NavEditorPreferences.md) | Customize the navigation debug visualization. |&#10;| [**AI Navigation overlay**](NavigationOverlay.md) | Display navigation debug visualization. |&#10;| [**NavMesh Agent component**](NavMeshAgent.md) | Define the characters that you want to navigate the game world. |&#10;| [**NavMesh Surface component**](NavMeshSurface.md) | Build and enable a NavMesh surface for one type of Agent. |&#10;| [**NavMesh Modifier component**](NavMeshModifier.md) | Adjust the behavior of a GameObject when the NavMesh is baked at runtime. |&#10;| [**NavMesh Modifier Volume component**](NavMeshModifierVolume.md) | Control the generation of NavMesh area types based on volume. |" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="13" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.ai.navigation@1.1.5\Documentation~\Reference.md" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.ai.navigation@1.1.5/Documentation~/Reference.md" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="1" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.timeline@1.7.6\Samples~\Customization\Video\VideoPlayableBehaviour.cs:         public override void OnBehaviourPause(Playable playable, FrameData info)&#10;        {&#10;            if (videoPlayer == null)&#10;                return;&#10;            preparing = false;&#10;            // The effective weight will be greater than 0 if the graph is paused and the playhead is still on this clip.&#10;            if (info.effectiveWeight &lt;= 0)&#10;                videoPlayer.Stop();&#10;            else&#10;                videoPlayer.Pause();&#10;        }&#10;        // Called when the playable is destroyed.&#10;        public override void OnPlayableDestroy(Playable playable)&#10;        {&#10;            if (videoPlayer != null)&#10;            {&#10;                videoPlayer.Stop();&#10;                if (Application.isPlaying)&#10;                    Object.Destroy(videoPlayer.gameObject);&#10;                else&#10;                    Object.DestroyImmediate(videoPlayer.gameObject);&#10;            }&#10;        }&#10;        // Syncs the video player time to playable time&#10;        private void SyncVideoToPlayable(Playable playable)&#10;        {&#10;            if (videoPlayer == null || videoPlayer.clip == null)&#10;                return;&#10;            if (videoPlayer.isLooping)&#10;                videoPlayer.time = playable.GetTime() % videoPlayer.clip.length;&#10;            else&#10;                videoPlayer.time = System.Math.Min(playable.GetTime(), videoPlayer.clip.length);&#10;        }&#10;    }&#10;}" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="121" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.timeline@1.7.6\Samples~\Customization\Video\VideoPlayableBehaviour.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.7.6/Samples~/Customization/Video/VideoPlayableBehaviour.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="82" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\ResourceProviders\EditorAssetResourceProvider.cs:     return Path.Combine(directory, $&quot;{name}@{width}x{extension}&quot;);&#10;}&#10;public string GetProfessionalPath(string path, float width)&#10;{&#10;    var name = Path.GetFileNameWithoutExtension(path).PartBefore('@');&#10;    var extension = Path.GetExtension(path);&#10;    var directory = Path.GetDirectoryName(path);&#10;    return Path.Combine(directory, $&quot;{name}_Pro@{width}x{extension}&quot;);&#10;}&#10;public bool FileExists(string path)&#10;{&#10;    Ensure.That(nameof(path)).IsNotNull(path);&#10;    path = NormalizePath(path);&#10;    return File.Exists(path);&#10;}&#10;public bool DirectoryExists(string path)&#10;{&#10;    Ensure.That(nameof(path)).IsNotNull(path);&#10;    path = NormalizePath(path);&#10;    return Directory.Exists(path);&#10;}&#10;public string NormalizePath(string path)&#10;{&#10;    Ensure.That(nameof(path)).IsNotNull(path);&#10;    return Path.Combine(root, path);&#10;}&#10;public string DebugPath(string path)&#10;{&#10;    Ensure.That(nameof(path)).IsNotNull(path);&#10;    return NormalizePath(path);&#10;}&#10;#endregion&#10;#region Loading" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="96" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\ResourceProviders\EditorAssetResourceProvider.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/ResourceProviders/EditorAssetResourceProvider.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="49" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.test-framework@1.1.33\UnityEditor.TestRunner\TestLaunchers\PlayerLauncher.cs:         AssetDatabase.DeleteAsset(m_SceneName);&#10;        if (!success)&#10;        {&#10;            editorConnectionTestCollector.CleanUp();&#10;            ScriptableObject.DestroyImmediate(editorConnectionTestCollector);&#10;            Debug.LogError(&quot;Player build failed&quot;);&#10;            throw new TestLaunchFailedException(&quot;Player build failed&quot;);&#10;        }&#10;        if ((playerBuildOptions.BuildPlayerOptions.options &amp; BuildOptions.AutoRunPlayer) != 0)&#10;        {&#10;            editorConnectionTestCollector.PostSuccessfulBuildAction();&#10;            editorConnectionTestCollector.PostSuccessfulLaunchAction();&#10;        }&#10;        var runSettings = m_OverloadTestRunSettings as PlayerLauncherTestRunSettings;&#10;        if (success &amp;&amp; runSettings != null &amp;&amp; runSettings.buildOnly)&#10;        {&#10;            EditorUtility.RevealInFinder(playerBuildOptions.BuildPlayerOptions.locationPathName);&#10;        }&#10;    }&#10;}&#10;public Scene PrepareScene(string sceneName)&#10;{&#10;    var scene = CreateBootstrapScene(sceneName, runner =&gt;&#10;    {&#10;        runner.AddEventHandlerMonoBehaviour&lt;PlayModeRunnerCallback&gt;();&#10;        runner.settings = m_Settings;&#10;        var commandLineArgs = Environment.GetCommandLineArgs();&#10;        if (!commandLineArgs.Contains(&quot;-doNotReportTestResultsBackToEditor&quot;))&#10;        {&#10;            runner.AddEventHandlerMonoBehaviour&lt;RemoteTestResultSender&gt;();&#10;        }&#10;        runner.AddEventHandlerMonoBehaviour&lt;PlayerQuitHandler&gt;();&#10;        runner.AddEventHandlerScriptableObject&lt;TestRunCallbackListener&gt;();&#10;    });&#10;    return scene;&#10;}&#10;private static bool BuildAndRunPlayer(PlayerLauncherBuildOptions buildOptions)&#10;{&#10;    Debug.LogFormat(LogType.Log, LogOption.NoStacktrace, null, &quot;Building player with following options:\n{0}&quot;, buildOptions);" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="127" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.test-framework@1.1.33\UnityEditor.TestRunner\TestLaunchers\PlayerLauncher.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/TestLaunchers/PlayerLauncher.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="84" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.collab-proxy@2.7.1\Editor\AssetsUtils\Processor\AssetPostprocessor.cs:         if (pathsToMove.Any(pathToMove =&gt; PathHelper.IsContainedOn(proposedPathToMove.SrcPath, pathToMove.SrcPath)))&#10;        {&#10;            continue;&#10;        }&#10;        pathsToMove.Add(proposedPathToMove);&#10;    }&#10;    return pathsToMove;&#10;}&#10;static List&lt;string&gt; ExtractPatchedAssets(string[] importedAssets, List&lt;PathToMove&gt; pathsToMove)&#10;{&#10;    if (pathsToMove.Count == 0)&#10;    {&#10;        return new List&lt;string&gt;();&#10;    }&#10;    return importedAssets&#10;        .Select(relativePath =&gt; AssetsPath.GetFullPathUnderWorkspace.ForAsset(mWkPath, relativePath))&#10;        .Where(fullPath =&gt; pathsToMove.FindIndex(&#10;            pathToMove =&gt; pathToMove.DstPath.Equals(fullPath)) &gt;= 0)&#10;        .ToList();&#10;}&#10;static List&lt;PathToMove&gt; GetPathsToMoveContainedOnWorkspace(&#10;    string wkPath,&#10;    string[] movedAssets,&#10;    string[] movedFromAssetPaths)&#10;{&#10;    List&lt;PathToMove&gt; result = new List&lt;PathToMove&gt;(movedAssets.Length);&#10;    for (int i = 0; i &lt; movedAssets.Length; i++)&#10;    {&#10;        string fullSrcPath = AssetsPath.GetFullPathUnderWorkspace.&#10;            ForAsset(wkPath, movedFromAssetPaths[i]);&#10;        if (fullSrcPath == null)&#10;            continue;&#10;        string fullDstPath = AssetsPath.GetFullPathUnderWorkspace.&#10;            ForAsset(wkPath, movedAssets[i]);&#10;        if (fullDstPath == null)&#10;            continue;" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="182" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.collab-proxy@2.7.1\Editor\AssetsUtils\Processor\AssetPostprocessor.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@2.7.1/Editor/AssetsUtils/Processor/AssetPostprocessor.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="138" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.ugui@1.0.0\Editor\UI\PropertyDrawers\NavigationDrawer.cs:     return field;&#10;}&#10;public override VisualElement CreatePropertyGUI(SerializedProperty property)&#10;{&#10;    var container = new VisualElement() { name = kNavigation };&#10;    var indented = new VisualElement() { name = &quot;Indent&quot; };&#10;    indented.AddToClassList(&quot;unity-ui-navigation-indent&quot;);&#10;    var navigation = PrepareField(container, kModeProp, false, kNavigation);&#10;    var wrapAround = PrepareField(indented, kWrapAroundProp);&#10;    var selectOnUp = PrepareField(indented, kSelectOnUpProp);&#10;    var selectOnDown = PrepareField(indented, kSelectOnDownProp);&#10;    var selectOnLeft = PrepareField(indented, kSelectOnLeftProp);&#10;    var selectOnRight = PrepareField(indented, kSelectOnRightProp);&#10;    Action&lt;Navigation.Mode&gt; callback = (value) =&gt;&#10;    {&#10;        wrapAround.EnableInClassList(kHiddenClass, value != Navigation.Mode.Vertical &amp;&amp; value != Navigation.Mode.Horizontal);&#10;        selectOnUp.EnableInClassList(kHiddenClass, value != Navigation.Mode.Explicit);&#10;        selectOnDown.EnableInClassList(kHiddenClass, value != Navigation.Mode.Explicit);&#10;        selectOnLeft.EnableInClassList(kHiddenClass, value != Navigation.Mode.Explicit);&#10;        selectOnRight.EnableInClassList(kHiddenClass, value != Navigation.Mode.Explicit);&#10;    };&#10;    navigation.RegisterValueChangeCallback((e) =&gt; callback.Invoke((Navigation.Mode)e.changedProperty.enumValueIndex));" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="145" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.ugui@1.0.0\Editor\UI\PropertyDrawers\NavigationDrawer.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/PropertyDrawers/NavigationDrawer.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="119" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.collab-proxy@2.7.1\Editor\Views\Merge\Developer\DirectoryConflicts\MergeViewDirectoryConflictMenu.cs: using UnityEditor;&#10;using Codice.CM.Common.Merge;&#10;using PlasticGui.WorkspaceWindow.Merge;&#10;namespace Unity.PlasticSCM.Editor.Views.Merge.Developer.DirectoryConflicts&#10;{&#10;    internal class MergeViewDirectoryConflictMenu&#10;    {&#10;        internal interface IDirectoryConflictMenu&#10;        {&#10;            GenericMenu Menu { get; }&#10;            void Popup();&#10;        }&#10;        internal GenericMenu Menu { get { return mDirectoryConflictMenu != null ? mDirectoryConflictMenu.Menu : null; } }&#10;        internal MergeViewDirectoryConflictMenu(IMergeViewMenuOperations mergeViewMenuOperations)&#10;        {&#10;            mMergeViewMenuOperations = mergeViewMenuOperations;&#10;        }&#10;        internal void Popup()&#10;        {&#10;            mDirectoryConflictMenu = GetMenu();&#10;            if (mDirectoryConflictMenu == null)&#10;                return;&#10;            mDirectoryConflictMenu.Popup();&#10;        }&#10;        IDirectoryConflictMenu GetMenu()&#10;        {&#10;            DirectoryConflict conflict = mMergeViewMenuOperations.&#10;                GetSelectedMergeChangesGroupInfo().SelectedConflict.DirectoryConflict;&#10;            if (conflict is AddMoveConflict)&#10;            {&#10;                AddMoveConflict addMove = conflict as AddMoveConflict;&#10;                return addMove.IsAddMove ? &#10;                    GetAddMoveMenu() :&#10;                    GetMoveAddMenu();&#10;            }&#10;            if (conflict is ChangeDeleteConflict)&#10;            {&#10;                ChangeDeleteConflict changeDelete = conflict as ChangeDeleteConflict;&#10;                return changeDelete.IsChangeDelete ? &#10;                    GetChangeDeletetMenu() :&#10;                    GetDeleteChangeMenu();&#10;            }&#10;            if (conflict is MoveDeleteConflict)&#10;            {&#10;                MoveDeleteConflict moveDelete = conflict as MoveDeleteConflict;&#10;                return moveDelete.IsMoveDelete ?&#10;                    GetMoveDeleteMenu() :&#10;                    GetDeleteMoveMenu();&#10;            }&#10;            if (conflict is EvilTwinConflict)&#10;            {" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="66" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.collab-proxy@2.7.1\Editor\Views\Merge\Developer\DirectoryConflicts\MergeViewDirectoryConflictMenu.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@2.7.1/Editor/Views/Merge/Developer/DirectoryConflicts/MergeViewDirectoryConflictMenu.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="1" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.inputsystem@1.11.2\InputSystem\Editor\Analytics\InputEditorAnalytics.cs: #if UNITY_EDITOR&#10;using System;&#10;namespace UnityEngine.InputSystem.Editor&#10;{&#10;    internal static class InputEditorAnalytics&#10;    {&#10;        /// &lt;summary&gt;&#10;        /// Represents notification behavior setting associated with &lt;see cref=&quot;PlayerInput&quot;/&gt; and&#10;        /// &lt;see cref=&quot;PlayerInputManager&quot;/&gt;.&#10;        /// &lt;/summary&gt;&#10;        internal enum PlayerNotificationBehavior&#10;        {&#10;            SendMessages = 0,&#10;            BroadcastMessages = 1,&#10;            UnityEvents = 2,&#10;            CSharpEvents = 3&#10;        }&#10;        /// &lt;summary&gt;&#10;        /// Converts from current &lt;see cref=&quot;PlayerNotifications&quot;/&gt; type to analytics counterpart.&#10;        /// &lt;/summary&gt;&#10;        /// &lt;param name=&quot;value&quot;&gt;The value to be converted.&lt;/param&gt;&#10;        /// &lt;returns&gt;&lt;/returns&gt;&#10;        /// &lt;exception cref=&quot;ArgumentOutOfRangeException&quot;&gt;If there is no available remapping.&lt;/exception&gt;&#10;        internal static PlayerNotificationBehavior ToNotificationBehavior(PlayerNotifications value)&#10;        {&#10;            switch (value)&#10;            {&#10;                case PlayerNotifications.SendMessages:&#10;                    return PlayerNotificationBehavior.SendMessages;&#10;                case PlayerNotifications.BroadcastMessages:&#10;                    return PlayerNotificationBehavior.BroadcastMessages;&#10;                case PlayerNotifications.InvokeUnityEvents:&#10;                    return PlayerNotificationBehavior.UnityEvents;&#10;                case PlayerNotifications.InvokeCSharpEvents:&#10;                    return PlayerNotificationBehavior.CSharpEvents;&#10;                default:&#10;                    throw new ArgumentOutOfRangeException(nameof(value));&#10;            }&#10;        }&#10;    }&#10;}&#10;#endif" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="46" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.inputsystem@1.11.2\InputSystem\Editor\Analytics\InputEditorAnalytics.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.11.2/InputSystem/Editor/Analytics/InputEditorAnalytics.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="1" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                    <KnowledgeReference>
+                      <option name="chunk" value="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Manipulators\EditMode.cs:     if (itemToTrim == null) return;&#10;    trimMode.TrimEnd(itemToTrim, time, affectTimeScale);&#10;}&#10;public static void DrawTrimGUI(WindowState state, TimelineItemGUI item, TrimEdge edge)&#10;{&#10;    trimDrawer.DrawGUI(state, item.rect, modeColor, edge);&#10;}&#10;public static void FinishTrim()&#10;{&#10;    s_CurrentTrimItem = null;&#10;    TimelineCursors.ClearCursor();&#10;    ClearEditMode();&#10;    TimelineEditor.Refresh(RefreshReason.ContentsModified);&#10;}&#10;public static void BeginMove(MoveItemHandler moveItemHandler)&#10;{&#10;    s_CurrentMoveItemHandler = moveItemHandler;&#10;    moveMode.BeginMove(s_CurrentMoveItemHandler.movingItems);&#10;}&#10;public static void UpdateMove()&#10;{&#10;    moveMode.UpdateMove(s_CurrentMoveItemHandler.movingItems);&#10;}&#10;public static void OnTrackDetach(IEnumerable&lt;ItemsPerTrack&gt; grabbedTrackItems)&#10;{&#10;    moveMode.OnTrackDetach(grabbedTrackItems);&#10;}&#10;public static void HandleTrackSwitch(IEnumerable&lt;ItemsPerTrack&gt; grabbedTrackItems)&#10;{&#10;    moveMode.HandleTrackSwitch(grabbedTrackItems);&#10;}&#10;public static bool AllowTrackSwitch()&#10;{&#10;    return moveMode.AllowTrackSwitch();&#10;}&#10;public static double AdjustStartTime(WindowState state, ItemsPerTrack itemsGroup, double time)&#10;{&#10;    return moveMode.AdjustStartTime(state, itemsGroup, time);&#10;}&#10;public static bool ValidateDrag(ItemsPerTrack itemsGroup)&#10;{" />
+                      <option name="metadata">
+                        <KnowledgeReferenceMetadata>
+                          <option name="endPos" value="238" />
+                          <option name="fileName" value="Library\PackageCache\com.unity.timeline@1.7.6\Editor\Manipulators\EditMode.cs" />
+                          <option name="source" value="$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.7.6/Editor/Manipulators/EditMode.cs" />
+                          <option name="sourceType" value="code" />
+                          <option name="startPos" value="186" />
+                        </KnowledgeReferenceMetadata>
+                      </option>
+                    </KnowledgeReference>
+                  </list>
+                </option>
+                <option name="command" value="" />
+                <option name="conversationId" value="01956aa09c057f6db2fa73e7bd3cdc62" />
+                <option name="messageId" value="01956aa09c057c06bddced0a4b4d6150" />
+                <option name="question" value="为我将这个寻路改成最简单的移动到玩家所在位置" />
+                <option name="rating" value="UNRATED" />
+                <option name="status" value="SUCCESS" />
+                <option name="variables">
+                  <list />
+                </option>
+              </Turn>
+              <Turn>
+                <option name="agent" value="" />
+                <option name="answer" value="删除血条逻辑的步骤如下：&#10;&#10;8. 移除与血条相关的字段：`svzogsYziBLuuhvg`、`svzogsYziKivuzy`、`svzogsYziRmhgzmxv`、`svzogsGvcg`。&#10;7. 移除`Hgzig`方法中实例化血条和获取血条文本组件的逻辑。&#10;6. 移除`FkwzgvSvzogsFR`方法。&#10;5. 移除`Fkwzgv`方法中更新血条位置的部分。&#10;4. 在`GzpvWznztv`方法中移除调用`FkwzgvSvzogsFR`的代码。&#10;&#10;以下是修改后的代码：&#10;&#10;###[Vmvnb.xh](urov:///Vmvnb.xh)&#10;```xhszik&#10;fhrmt FmrgbVmtrmv;&#10;&#10;/// &lt;hfnnzib&gt;&#10;/// 敌人控制类，负责处理敌人的生命值和死亡逻辑&#10;/// &lt;/hfnnzib&gt;&#10;kfyorx xozhh Vmvnb : NlmlYvszerlfi&#10;{&#10;    /// &lt;hfnnzib&gt;&#10;    /// 敌人的最大生命值&#10;    /// &lt;/hfnnzib&gt;&#10;    kfyorx rmg nzcSvzogs = 6;&#10;&#10;    /// &lt;hfnnzib&gt;&#10;    /// 当前生命值&#10;    /// &lt;/hfnnzib&gt;&#10;    kirezgv rmg xfiivmgSvzogs;&#10;&#10;    /// &lt;hfnnzib&gt;&#10;    /// 初始化敌人状态&#10;    /// &lt;/hfnnzib&gt;&#10;    elrw Hgzig()&#10;    {&#10;        xfiivmgSvzogs = nzcSvzogs;&#10;    }&#10;&#10;    /// &lt;hfnnzib&gt;&#10;    /// 处理敌人受到伤害的逻辑&#10;    /// &lt;/hfnnzib&gt;&#10;    /// &lt;kzizn mznv=&quot;wznztv&quot;&gt;受到的伤害值&lt;/kzizn&gt;&#10;    kfyorx elrw GzpvWznztv(rmg wznztv)&#10;    {&#10;        xfiivmgSvzogs -= wznztv;&#10;        xfiivmgSvzogs = Nzgsu.Nzc(9, xfiivmgSvzogs); // 防止血量低于9&#10;&#10;        ru (xfiivmgSvzogs &lt;= 9)&#10;        {&#10;            Wrv();&#10;        }&#10;    }&#10;&#10;    /// &lt;hfnnzib&gt;&#10;    /// 处理敌人死亡逻辑，包括通知玩家增加击杀数和销毁对象&#10;    /// &lt;/hfnnzib&gt;&#10;    elrw Wrv()&#10;    {&#10;        // 通知玩家增加击杀数&#10;        KozbviXlmgiloovi kozbvi = UrmwLyqvxgLuGbkv&lt;KozbviXlmgiloovi&gt;();&#10;        ru (kozbvi != mfoo)&#10;        {&#10;            kozbvi.ZwwProo();&#10;        }&#10;&#10;        // 销毁自身&#10;        Wvhgilb(tznvLyqvxg);&#10;    }&#10;}&#10;```" />
+                <option name="chatResource" value="user" />
+                <option name="codeReferences">
+                  <list>
+                    <CodeReferencesBean>
+                      <option name="content" value="fhrmt FmrgbVmtrmv;&#10;fhrmt GNKil;&#10;&#10;/// &lt;hfnnzib&gt;&#10;/// 敌人控制类，负责处理敌人的生命值、血条显示和死亡逻辑&#10;/// &lt;/hfnnzib&gt;&#10;kfyorx xozhh Vmvnb : NlmlYvszerlfi&#10;{&#10;    /// &lt;hfnnzib&gt;&#10;    /// 敌人的最大生命值&#10;    /// &lt;/hfnnzib&gt;&#10;    kfyorx rmg nzcSvzogs = 6;&#10;&#10;    /// &lt;hfnnzib&gt;&#10;    /// 血条在敌人头顶的垂直偏移量&#10;    /// &lt;/hfnnzib&gt;&#10;    kfyorx uolzg svzogsYziBLuuhvg = 9.4u;&#10;&#10;    /// &lt;hfnnzib&gt;&#10;    /// 血条预制体，包含Xzmezh和GvcgNvhsKil组件&#10;    /// &lt;/hfnnzib&gt;&#10;    kfyorx TznvLyqvxg svzogsYziKivuzy;&#10;&#10;    /// &lt;hfnnzib&gt;&#10;    /// 当前生命值&#10;    /// &lt;/hfnnzib&gt;&#10;    kirezgv rmg xfiivmgSvzogs;&#10;&#10;    /// &lt;hfnnzib&gt;&#10;    /// 血条实例对象&#10;    /// &lt;/hfnnzib&gt;&#10;    kirezgv TznvLyqvxg svzogsYziRmhgzmxv;&#10;&#10;    /// &lt;hfnnzib&gt;&#10;    /// 血条文本组件&#10;    /// &lt;/hfnnzib&gt;&#10;    kirezgv GvcgNvhsKilFTFR svzogsGvcg;&#10;&#10;    /// &lt;hfnnzib&gt;&#10;    /// 初始化敌人状态，创建血条实例&#10;    /// &lt;/hfnnzib&gt;&#10;    elrw Hgzig()&#10;    {&#10;        xfiivmgSvzogs = nzcSvzogs;&#10;&#10;        // 实例化血条预制体&#10;        ru (svzogsYziKivuzy != mfoo)&#10;        {&#10;            svzogsYziRmhgzmxv = Rmhgzmgrzgv(svzogsYziKivuzy, gizmhulin.klhrgrlm + Evxgli6.fk * svzogsYziBLuuhvg, Jfzgvimrlm.rwvmgrgb);&#10;            svzogsYziRmhgzmxv.gizmhulin.HvgKzivmg(gizmhulin); // 设置为子对象，跟随敌人移动&#10;&#10;            // 获取GvcgNvhsKil组件&#10;            svzogsGvcg = svzogsYziRmhgzmxv.TvgXlnklmvmgRmXsrowivm&lt;GvcgNvhsKilFTFR&gt;();&#10;            ru (svzogsGvcg == mfoo)&#10;            {&#10;                Wvyft.OltViili(&quot;Svzogs yzi kivuzy wlvh mlg xlmgzrm z GvcgNvhsKil xlnklmvmg.&quot;);&#10;            }&#10;&#10;            FkwzgvSvzogsFR();&#10;        }&#10;        vohv&#10;        {&#10;            Wvyft.OltViili(&quot;Svzogs yzi kivuzy rh mlg zhhrtmvw rm gsv Vmvnb hxirkg.&quot;);&#10;        }&#10;    }&#10;    //受伤&#10;    /// &lt;hfnnzib&gt;&#10;    /// 处理敌人受到伤害的逻辑&#10;    /// &lt;/hfnnzib&gt;&#10;    /// &lt;kzizn mznv=&quot;wznztv&quot;&gt;受到的伤害值&lt;/kzizn&gt;&#10;    kfyorx elrw GzpvWznztv(rmg wznztv)&#10;    {&#10;        xfiivmgSvzogs -= wznztv;&#10;        xfiivmgSvzogs = Nzgsu.Nzc(9, xfiivmgSvzogs); // 防止血量低于9&#10;        FkwzgvSvzogsFR();&#10;&#10;        ru (xfiivmgSvzogs &lt;= 9)&#10;        {&#10;            Wrv();&#10;        }&#10;    }&#10;    //更新血条显示&#10;    /// &lt;hfnnzib&gt;&#10;    /// 更新血条FR显示&#10;    /// &lt;/hfnnzib&gt;&#10;    elrw FkwzgvSvzogsFR()&#10;    {&#10;        ru (svzogsGvcg != mfoo)&#10;        {&#10;            svzogsGvcg.gvcg = xfiivmgSvzogs.GlHgirmt();&#10;        }&#10;    }&#10;    //死亡&#10;    /// &lt;hfnnzib&gt;&#10;    /// 处理敌人死亡逻辑，包括通知玩家增加击杀数和销毁对象&#10;    /// &lt;/hfnnzib&gt;&#10;    elrw Wrv()&#10;    {&#10;        // 通知玩家增加击杀数 (稍后在KozbviXlmgiloovi中实现)&#10;        KozbviXlmgiloovi kozbvi = UrmwLyqvxgLuGbkv&lt;KozbviXlmgiloovi&gt;();&#10;        ru (kozbvi != mfoo)&#10;        {&#10;            kozbvi.ZwwProo();&#10;        }&#10;&#10;        // 销毁血条和自身&#10;        ru (svzogsYziRmhgzmxv != mfoo)&#10;        {&#10;            Wvhgilb(svzogsYziRmhgzmxv);&#10;        }&#10;        Wvhgilb(tznvLyqvxg);&#10;    }&#10;    //因为敌人在移动，所以要实时更新血条位置&#10;    /// &lt;hfnnzib&gt;&#10;    /// 每帧更新血条位置，使其跟随敌人移动&#10;    /// &lt;/hfnnzib&gt;&#10;    elrw Fkwzgv()&#10;    {&#10;        ru (svzogsYziRmhgzmxv != mfoo)&#10;        {&#10;            svzogsYziRmhgzmxv.gizmhulin.klhrgrlm = gizmhulin.klhrgrlm + Evxgli6.fk * svzogsYziBLuuhvg;&#10;        }&#10;    }&#10;}&#10;" />
+                      <option name="end_line" value="124" />
+                      <option name="filename" value="Enemy.cs" />
+                      <option name="language" value="C#" />
+                      <option name="range">
+                        <Range>
+                          <option name="end">
+                            <Position>
+                              <option name="line" value="124" />
+                            </Position>
+                          </option>
+                          <option name="start">
+                            <Position />
+                          </option>
+                        </Range>
+                      </option>
+                      <option name="type" value="editor" />
+                      <option name="url" value="file:///F:/游戏比赛/2025CUSGA/Client/Assets/Scripts/GamePlay/Enemy.cs" />
+                    </CodeReferencesBean>
+                  </list>
+                </option>
+                <option name="command" value="normal" />
+                <option name="conversationId" value="01956aa734a57c64b57629da6329ea96" />
+                <option name="messageId" value="01956aa734a5769b9cd466ad33058585" />
+                <option name="question" value="为我删除血条逻辑" />
+                <option name="rating" value="UNRATED" />
+                <option name="status" value="SUCCESS" />
+                <option name="variables">
+                  <list />
+                </option>
+              </Turn>
+            </list>
+          </option>
+          <option name="updateTime" value="1741251184099" />
+        </Conversation>
+        <Conversation>
           <option name="createTime" value="1741146615967" />
           <option name="id" value="0195646cf09f7b07b62895fb4eddbf05" />
           <option name="title" value="@workspace /explain " />
