@@ -4,6 +4,12 @@
     <option name="conversations">
       <list>
         <Conversation>
+          <option name="createTime" value="1741259046215" />
+          <option name="id" value="01956b207d477b0dada59ac2e7eeafe8" />
+          <option name="title" value="新对话 2025年3月06日 19:04:06" />
+          <option name="updateTime" value="1741259046215" />
+        </Conversation>
+        <Conversation>
           <option name="createTime" value="1741250521860" />
           <option name="id" value="01956a9e6b047352a37674ee22d7001d" />
           <option name="title" value="@workspace 为我将这个寻路改成最简单的移动到玩家所在位置" />
