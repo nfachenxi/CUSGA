@@ -46,9 +46,15 @@ TagManager:
   - name: BG
     uniqueID: 1700010791
     locked: 0
-  - name: Barrier
+  - name: "\u969C\u788D"
     uniqueID: 3683139849
     locked: 0
-  - name: Player
+  - name: "\u73A9\u5BB6"
     uniqueID: 2228506499
+    locked: 0
+  - name: "\u73A9\u5BB6\u773C\u775B"
+    uniqueID: 1998470721
+    locked: 0
+  - name: "\u73A9\u5BB6\u77B3\u5B54"
+    uniqueID: 1026682305
     locked: 0

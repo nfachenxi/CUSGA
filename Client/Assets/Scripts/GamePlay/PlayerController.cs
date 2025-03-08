@@ -21,6 +21,14 @@ public class PlayerController : MonoBehaviour
     public float killCountYOffset = 0.8f; // 击杀数显示在头顶的偏移量
     public GameObject killCountUIPrefab; // 击杀数UI预制体
 
+    [Header("自动攻击设置")]
+    [SerializeField] private float meleeAttackInterval = 1f;
+    [SerializeField] private float rangedAttackInterval = 2f;
+
+    private float meleeTimer;
+    private float rangedTimer;
+
+
     [Header("玩家设置")]
     // 这些按键设置现在通过 Input System 来处理, 这里不再需要
     // public KeyCode meleeAttackKey = KeyCode.J; // 近战攻击键
@@ -37,14 +45,16 @@ public class PlayerController : MonoBehaviour
     private Vector2 smoothVelocity;
     private Vector2 lastFacingDirection = Vector2.right; // 初始方向为右
 
+    private Animator animator; // 动画控制器
+
     private void Awake()
     {
         // 初始化输入控制
         playerControls = new PlayerControls();
 
-        // 订阅攻击输入事件
-        playerControls.Player.MeleeAttack.performed += ctx => PerformMeleeAttack();
-        playerControls.Player.RangedAttack.performed += ctx => ShootProjectile();
+        // 注意：这里注释掉了攻击输入的订阅，因为现在是自动攻击
+        //playerControls.Player.MeleeAttack.performed += ctx => PerformMeleeAttack();
+        //playerControls.Player.RangedAttack.performed += ctx => ShootProjectile();
     }
 
     private void OnEnable()
@@ -80,6 +90,12 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogError("kill Count UI prefab is not assigned in the Enemy script.");
         }
+
+        // 获取Animator组件
+        animator = GetComponent<Animator>();
+        // 设置动画初始状态
+        animator.SetBool("IsLeft", true);
+        animator.SetBool("IsMove", false);
     }
 
     private void OnDestroy()
@@ -88,9 +104,9 @@ public class PlayerController : MonoBehaviour
         playerControls.Player.Move.performed -= OnMoveInput;
         playerControls.Player.Move.canceled -= OnMoveInput;
 
-        // 取消攻击事件的订阅 (重要：防止内存泄漏)
-        playerControls.Player.MeleeAttack.performed -= ctx => PerformMeleeAttack();
-        playerControls.Player.RangedAttack.performed -= ctx => ShootProjectile();
+        // 注意：这里也注释掉了攻击事件的取消订阅
+        //playerControls.Player.MeleeAttack.performed -= ctx => PerformMeleeAttack();
+        //playerControls.Player.RangedAttack.performed -= ctx => ShootProjectile();
     }
 
     private void OnMoveInput(InputAction.CallbackContext context)
@@ -106,6 +122,41 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Move();
+
+        /*// 自动攻击逻辑
+        meleeTimer += Time.deltaTime;
+        if (meleeTimer >= meleeAttackInterval)
+        {
+            PerformMeleeAttack();
+            meleeTimer = 0f;
+        }
+
+        rangedTimer += Time.deltaTime;
+        if (rangedTimer >= rangedAttackInterval)
+        {
+            ShootProjectile();
+            rangedTimer = 0f;
+        }*/
+
+        // 处理动画参数
+        bool isMoving = moveInput.magnitude > 0.1f;
+        animator.SetBool("IsMove", isMoving);
+
+        if (isMoving)
+        {
+            bool isDOrS = moveInput.x > 0.1f || moveInput.y < -0.1f; // D或S被按下
+            bool isAOrW = moveInput.x < -0.1f || moveInput.y > 0.1f; // A或W被按下
+
+            if (isDOrS)
+            {
+                animator.SetBool("IsLeft", false);
+            }
+            else if (isAOrW)
+            {
+                animator.SetBool("IsLeft", true);
+            }
+        }
+
 
         //更新击杀UI位置
         if (killCountUIInstance != null)
