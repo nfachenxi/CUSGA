@@ -1,3 +1,49 @@
 2025-03-09 11:41:46,722 - INFO - 成功加载仓库: F:\游戏比赛\25-dev\25-cusga
 2025-03-09 11:42:17,506 - INFO - 已经在 develop 分支
 2025-03-09 11:42:18,422 - INFO - 成功拉取 develop 分支的更新
+2025-03-09 11:42:54,573 - INFO - 成功提交更改
+2025-03-09 11:42:54,573 - INFO - 已经在 develop 分支
+2025-03-09 11:42:54,658 - INFO - 成功合并分支 develop 到 develop
+2025-03-09 11:42:54,743 - ERROR - 删除分支时出错: Cmd('git') failed due to: exit code(1)
+  cmdline: git branch -D develop
+  stderr: 'error: cannot delete branch 'develop' used by worktree at 'F:/游戏比赛/25-dev/25-cusga''
+Traceback (most recent call last):
+  File "Git开发助手.py", line 195, in delete_user_branch
+  File "git\repo\base.py", line 593, in delete_head
+  File "git\refs\head.py", line 162, in delete
+  File "git\cmd.py", line 986, in <lambda>
+  File "git\cmd.py", line 1599, in _call_process
+  File "git\cmd.py", line 1389, in execute
+git.exc.GitCommandError: Cmd('git') failed due to: exit code(1)
+  cmdline: git branch -D develop
+  stderr: 'error: cannot delete branch 'develop' used by worktree at 'F:/游戏比赛/25-dev/25-cusga''
+2025-03-09 11:52:42,743 - INFO - 成功推送 develop 分支
+2025-03-09 11:53:43,517 - INFO - 成功加载仓库: F:\游戏比赛\25-dev\25-cusga
+2025-03-09 11:53:50,044 - INFO - 已经在 develop 分支
+2025-03-09 11:53:51,005 - INFO - 成功拉取 develop 分支的更新
+2025-03-09 11:53:51,196 - INFO - 创建并切换到新分支: chenxi
+2025-03-09 11:54:26,443 - INFO - 成功提交更改
+2025-03-09 11:54:26,779 - INFO - 切换到 develop 分支
+2025-03-09 11:54:26,922 - ERROR - 合并分支时出错: Cmd('git') failed due to: exit code(1)
+  cmdline: git merge chenxi
+  stdout: 'Updating 2953409..00f08ff'
+  stderr: 'error: Your local changes to the following files would be overwritten by merge:
+	Git开发助手.exe
+	git_tool.log
+Please commit your changes or stash them before you merge.
+Aborting'
+Traceback (most recent call last):
+  File "Git开发助手.py", line 203, in merge_user_branch
+  File "git\cmd.py", line 986, in <lambda>
+  File "git\cmd.py", line 1599, in _call_process
+  File "git\cmd.py", line 1389, in execute
+git.exc.GitCommandError: Cmd('git') failed due to: exit code(1)
+  cmdline: git merge chenxi
+  stdout: 'Updating 2953409..00f08ff'
+  stderr: 'error: Your local changes to the following files would be overwritten by merge:
+	Git开发助手.exe
+	git_tool.log
+Please commit your changes or stash them before you merge.
+Aborting'
+2025-03-09 11:54:44,094 - INFO - 成功删除分支: chenxi
+2025-03-09 11:54:44,975 - INFO - 成功推送 develop 分支
