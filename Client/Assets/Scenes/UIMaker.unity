@@ -199,6 +199,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207904264}
   m_CullTransparentMesh: 1
+--- !u!1 &244121568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244121570}
+  - component: {fileID: 244121569}
+  m_Layer: 0
+  m_Name: MapGeneration
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &244121569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244121568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac7cacfdcb353d4c977fcd919e90abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NodePrefab: {fileID: 0}
+  MapData:
+    nodes: []
+    currentNode:
+      nodeType: 0
+      position: {x: 0, y: 0}
+      children: []
+      parents: []
+      isVisited: 0
+      isLocked: 1
+    maxDepth: 0
+    maxWidth: 0
+  MaxDepth: 7
+  MaxWidth: 5
+  NodeSpacingX: 2
+  NodeSpacingY: 2
+  mapRoot: {fileID: 0}
+--- !u!4 &244121570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244121568}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 789.0774, y: 529.8386, z: 3.3938622}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &317117810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,3 +1433,4 @@ SceneRoots:
   - {fileID: 1506448259}
   - {fileID: 615622679}
   - {fileID: 2027236814}
+  - {fileID: 244121570}
