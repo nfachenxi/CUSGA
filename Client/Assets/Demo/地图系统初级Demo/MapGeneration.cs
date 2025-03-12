@@ -1,28 +1,19 @@
-// MapGenerator.cs
-
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class MapGeneration : MonoBehaviour
 {
     public GameObject NodePrefab;
-
-    //public GameObject LinePrefab; // 如果使用LinePrefab
     public Map MapData;
-    public int MaxDepth = 7;
+    public int MaxDepth = 10; // 修改为10层
     public int MaxWidth = 5;
     public float NodeSpacingX = 2f;
     public float NodeSpacingY = 2f;
-
-    public Dictionary<NodeType, float> NodeTypeWeights = new Dictionary<NodeType, float>()
-    {
-        { NodeType.Combat, 0.4f },
-        { NodeType.EliteCombat, 0.1f },
-        { NodeType.Shop, 0.1f },
-        { NodeType.Treasure, 0.1f },
-        { NodeType.Mystery, 0.2f },
-        { NodeType.Rest, 0.1f }
-    };
+    
+    public ScrollRect mapScrollRect;
+    public RectTransform mapContentRect;
+    
 
     public Dictionary<Node, NodeUI> NodeUIs = new Dictionary<Node, NodeUI>();
     public GameObject mapRoot;
@@ -40,14 +31,14 @@ public class MapGeneration : MonoBehaviour
             Destroy(mapRoot);
         }
 
-        mapRoot = new GameObject("MapRoot");
-        MapData = GenerateMap(MaxDepth, MaxWidth, NodeTypeWeights);
+        //mapRoot = new GameObject("MapRoot"); // 不需要单独的 MapRoot
+        MapData = GenerateStructuredMap(); // 生成地图数据
         NodeUIs.Clear();
 
-        // 实例化节点
+        // 实例化节点, 并设置父对象为 Content
         foreach (Node node in MapData.nodes)
         {
-            GameObject nodeObj = Instantiate(NodePrefab, mapRoot.transform);
+            GameObject nodeObj = Instantiate(NodePrefab, mapContentRect); // 注意这里的变化
             NodeUI nodeUI = nodeObj.GetComponent<NodeUI>();
             nodeUI.Initialize(node, this);
             nodeObj.transform.localPosition =
@@ -56,80 +47,207 @@ public class MapGeneration : MonoBehaviour
         }
 
         HighlightAvailablePaths();
+
+        SetupScrollView(); // 调用设置 ScrollView 的方法
     }
 
-    public Map GenerateMap(int maxDepth, int maxWidth, Dictionary<NodeType, float> nodeTypeWeights)
+    public void SetupScrollView()
+    {
+        // 计算地图内容的高度
+        float mapHeight = MaxDepth * NodeSpacingY;
+        // 设置 Content 区域大小
+        mapContentRect.sizeDelta = new Vector2(mapContentRect.sizeDelta.x, mapHeight);
+
+        // 初始滚动位置（顶部）
+        mapScrollRect.normalizedPosition = new Vector2(0.5f, 1);
+    }
+
+
+    // 新的结构化地图生成方法
+    public Map GenerateStructuredMap()
     {
         Map map = new Map();
-        map.maxDepth = maxDepth; //赋值最大深度和宽度
-        map.maxWidth = maxWidth;
+        map.maxDepth = MaxDepth;
+        map.maxWidth = MaxWidth;
+        map.nodes = new List<Node>();
 
-        // 1. 创建起始节点
-        Node startNode = CreateNode(NodeType.Rest, new Vector2Int(0, 0)); //初始类型
-        startNode.isLocked = false; //初始节点解锁
-        map.nodes.Add(startNode); //将初始节点添加到节点列表
-        map.currentNode = startNode; //将起始节点设为当前节点
+        // 创建起始节点（第0层）
+        Node startNode = CreateNode(NodeType.Rest, new Vector2(0, 0));
+        startNode.isLocked = false;
+        map.nodes.Add(startNode);
+        map.currentNode = startNode;
 
-        // 2. 递归生成节点
-        for (int depth = 1; depth < maxDepth; depth++) //从第一层开始生成
+        // 创建三条主要分支的起点（第1层，全部为普通战斗）
+        Node branch1Start = CreateNode(NodeType.Combat, new Vector2(1, -1));
+        Node branch2Start = CreateNode(NodeType.Combat, new Vector2(1, 0));
+        Node branch3Start = CreateNode(NodeType.Combat, new Vector2(1, 1));
+        
+        map.nodes.Add(branch1Start);
+        map.nodes.Add(branch2Start);
+        map.nodes.Add(branch3Start);
+        
+        // 连接起始节点到三个分支起点
+        ConnectNodes(startNode, branch1Start);
+        ConnectNodes(startNode, branch2Start);
+        ConnectNodes(startNode, branch3Start);
+
+        // 生成第一条分支路径（左侧）
+        List<Node> branch1Nodes = GenerateBranchPath(1, -1.5f, map, true);
+        
+        // 生成第三条分支路径（右侧）
+        List<Node> branch3Nodes = GenerateBranchPath(1, 1.5f, map, true);
+        
+        // 生成第二条分支路径（中间）
+        List<Node> branch2Nodes = GenerateBranchPath(1, 0, map, false);
+        
+        // 为第二条分支创建交叉连接
+        // 随机选择X和Y的值（第3-6层之间）
+        int xLayer = Random.Range(3, 7);
+        int yLayer = Random.Range(3, 7);
+        
+        // 找到对应层的节点
+        Node xNode = branch2Nodes.Find(n => (int)n.position.x == xLayer);
+        Node xTargetNode = branch1Nodes.Find(n => (int)n.position.x == xLayer + 1);
+        
+        Node yNode = branch2Nodes.Find(n => (int)n.position.x == yLayer);
+        Node yTargetNode = branch3Nodes.Find(n => (int)n.position.x == yLayer + 1);
+        
+        // 创建交叉连接
+        if (xNode != null && xTargetNode != null)
         {
-            int nodeCount = Random.Range(1, maxWidth + 1); //随机生成该层的节点数量（根据权重生成）
-            for (int i = 0; i < nodeCount; i++) //为每个节点创建一个Node对象，并设置Positon
-            {
-                NodeType type = GetRandomNodeType(nodeTypeWeights); //获取随机节点类型
-                Node newNode = CreateNode(type, new Vector2Int(depth, i)); //创建节点并生成节点
-                map.nodes.Add(newNode); //加进Map节点列表
-            }
+            ConnectNodes(xNode, xTargetNode);
+        }
+        
+        if (yNode != null && yTargetNode != null)
+        {
+            ConnectNodes(yNode, yTargetNode);
         }
 
-        // 3. 连接节点
-        for (int depth = 0; depth < maxDepth - 1; depth++) //遍历所有深度
+        // 创建Boss节点（第10层）
+        Node bossNode = CreateNode(NodeType.Boss, new Vector2(9, 0));
+        map.nodes.Add(bossNode);
+        
+        // 连接第9层所有节点到Boss节点
+        List<Node> layer9Nodes = map.nodes.FindAll(n => (int)n.position.x == 8);
+        foreach (Node node in layer9Nodes)
         {
-            List<Node> currentLayerNodes = GetNodesAtDepth(map, depth); //获取当前层节点
-            List<Node> nextLayerNodes = GetNodesAtDepth(map, depth + 1); //获取下一层节点
-
-            foreach (Node currentNode in currentLayerNodes) //遍历当前层节点
-            {
-                int childCount = Random.Range(1, 4); // 每个节点1-3个子节点
-                for (int i = 0; i < childCount; i++) //为每个节点生成子节点
-                {
-                    if (nextLayerNodes.Count > 0) //如果下一层节点不为空
-                    {
-                        Node childNode = nextLayerNodes[Random.Range(0, nextLayerNodes.Count)]; //获取下一层节点
-                        currentNode.children.Add(childNode); //将子节点添加到当前节点的子节点列表中
-                        childNode.parents.Add(currentNode); //将当前节点添加到子节点的父节点列表中
-                    }
-                }
-            }
-        }
-
-        // 确保所有节点都可达
-        for (int depth = 1; depth < maxDepth; depth++) //遍历所有深度
-        {
-            List<Node> currentLayerNodes = GetNodesAtDepth(map, depth); //获取当前层节点
-            foreach (Node node in currentLayerNodes) //遍历当前层节点
-            {
-                if (node.parents.Count == 0) //如果父节点为空
-                {
-                    List<Node> previousLayerNodes = GetNodesAtDepth(map, depth - 1); //获取上一层节点
-                    Node randomParent = previousLayerNodes[Random.Range(0, previousLayerNodes.Count)]; //随机获取上一层节点
-                    node.parents.Add(randomParent); //将当前节点添加到上一层节点
-                    randomParent.children.Add(node); //将上一层节点添加到当前节点的父节点列表中
-                }
-            }
-        }
-
-        // 4. 设置Boss节点
-        List<Node> lastLayerNodes = GetNodesAtDepth(map, maxDepth - 1); //获取最后一层节点
-        if (lastLayerNodes.Count > 0) //如果最后一层节点不为空
-        {
-            lastLayerNodes[Random.Range(0, lastLayerNodes.Count)].nodeType = NodeType.Boss; //设置最后一层节点为Boss节点
+            ConnectNodes(node, bossNode);
         }
 
         return map;
     }
 
-    private Node CreateNode(NodeType type, Vector2Int position)
+    // 生成单条分支路径
+    private List<Node> GenerateBranchPath(int startDepth, float horizontalPosition, Map map, bool isOuterPath)
+    {
+        List<Node> branchNodes = new List<Node>();
+        
+        // 已经添加的节点计数
+        int eliteCount = 0;
+        int shopCount = 0;
+        int eventCount = 0;
+        
+        // 第2层也是普通战斗关
+        Node layer2Node = CreateNode(NodeType.Combat, new Vector2(2, horizontalPosition));
+        map.nodes.Add(layer2Node);
+        branchNodes.Add(layer2Node);
+        
+        // 连接到对应的第1层节点
+        Node layer1Node = map.nodes.Find(n => (int)n.position.x == 1 && 
+                                         Mathf.Approximately((float)n.position.y, horizontalPosition));
+        if (layer1Node != null)
+        {
+            ConnectNodes(layer1Node, layer2Node);
+        }
+        
+        // 生成第3-9层的节点
+        for (int depth = 3; depth <= 8; depth++)
+        {
+            NodeType nodeType;
+            
+            // 根据路径类型和已有节点数量决定节点类型
+            if (isOuterPath) // 第一条和第三条路径
+            {
+                // 4-5个普通关+精英关，最多1个精英关
+                if (depth <= 7 && eliteCount < 1 && Random.value < 0.25f)
+                {
+                    nodeType = NodeType.EliteCombat;
+                    eliteCount++;
+                }
+                // 2-3个商店+事件，最多1个商店
+                else if (shopCount + eventCount < 3)
+                {
+                    if (shopCount < 1 && Random.value < 0.3f)
+                    {
+                        nodeType = NodeType.Shop;
+                        shopCount++;
+                    }
+                    else
+                    {
+                        nodeType = NodeType.Mystery; // 事件节点
+                        eventCount++;
+                    }
+                }
+                else
+                {
+                    nodeType = NodeType.Combat;
+                }
+            }
+            else // 第二条路径
+            {
+                // 第二条路径的节点类型分布类似，但会有分叉
+                if (depth <= 7 && eliteCount < 1 && Random.value < 0.25f)
+                {
+                    nodeType = NodeType.EliteCombat;
+                    eliteCount++;
+                }
+                else if (shopCount + eventCount < 3)
+                {
+                    if (shopCount < 1 && Random.value < 0.3f)
+                    {
+                        nodeType = NodeType.Shop;
+                        shopCount++;
+                    }
+                    else
+                    {
+                        nodeType = NodeType.Mystery; // 事件节点
+                        eventCount++;
+                    }
+                }
+                else
+                {
+                    nodeType = NodeType.Combat;
+                }
+            }
+            
+            // 创建节点
+            Node newNode = CreateNode(nodeType, new Vector2(depth, horizontalPosition));
+            map.nodes.Add(newNode);
+            branchNodes.Add(newNode);
+            
+            // 连接到上一层节点
+            Node previousNode = branchNodes[branchNodes.Count - 2];
+            ConnectNodes(previousNode, newNode);
+        }
+        
+        return branchNodes;
+    }
+
+    // 连接两个节点
+    private void ConnectNodes(Node parent, Node child)
+    {
+        if (!parent.children.Contains(child))
+        {
+            parent.children.Add(child);
+        }
+        
+        if (!child.parents.Contains(parent))
+        {
+            child.parents.Add(parent);
+        }
+    }
+
+    private Node CreateNode(NodeType type, Vector2 position)
     {
         Node node = new Node();
         node.nodeType = type;
@@ -137,43 +255,10 @@ public class MapGeneration : MonoBehaviour
         return node;
     }
 
-    /// <summary>
-    /// 根据深度获取该层节点
-    /// </summary>
-    /// <param name="map"></param>
-    /// <param name="depth"></param>
-    /// <returns></returns>
+    // 其余方法保持不变
     private List<Node> GetNodesAtDepth(Map map, int depth)
     {
-        return map.nodes.FindAll(n => n.position.x == depth); //返回该层节点
-    }
-
-    /// <summary>
-    /// 根据权重随机生成节点类型
-    /// </summary>
-    /// <param name="weights"></param>
-    /// <returns></returns>
-    private NodeType GetRandomNodeType(Dictionary<NodeType, float> weights)
-    {
-        float totalWeight = 0; //计算权重总和
-        foreach (var weight in weights.Values) //遍历权重字典
-        {
-            totalWeight += weight; //计算权重总和
-        }
-
-        float randomValue = Random.Range(0, totalWeight); //生成随机值
-        float cumulativeWeight = 0; //累计权重
-
-        foreach (var kvp in weights) //遍历权重字典
-        {
-            cumulativeWeight += kvp.Value; //累计权重
-            if (randomValue <= cumulativeWeight) //如果随机值小于等于累计权重，则返回对应的节点类型
-            {
-                return kvp.Key;
-            }
-        }
-
-        return NodeType.Combat; // 默认返回战斗
+        return map.nodes.FindAll(n => (int)n.position.x == depth);
     }
 
     public void MoveToNode(Node node)
@@ -208,7 +293,6 @@ public class MapGeneration : MonoBehaviour
     public void HighlightAvailablePaths()
     {
         // 高亮当前可走的路径
-
         // 先把所有节点设置为不可交互
         foreach (var kvp in NodeUIs)
         {
@@ -225,26 +309,22 @@ public class MapGeneration : MonoBehaviour
         }
     }
 
-    // 在MapGenerator中添加保存和加载方法
+    // 保存和加载方法保持不变
     public void SaveMap(string path)
     {
-        // 使用JsonUtility保存为JSON文件
         string json = JsonUtility.ToJson(MapData);
         System.IO.File.WriteAllText(path, json);
     }
 
     public void LoadMap(string path)
     {
-        // 使用JsonUtility从JSON文件加载
         string json = System.IO.File.ReadAllText(path);
         MapData = JsonUtility.FromJson<Map>(json);
-        //重新生成显示
         GenerateAndDisplayMapFromLoad();
     }
 
     public void GenerateAndDisplayMapFromLoad()
     {
-        // 如果已经有地图了，先销毁
         if (mapRoot != null)
         {
             Destroy(mapRoot);
@@ -252,7 +332,7 @@ public class MapGeneration : MonoBehaviour
 
         mapRoot = new GameObject("MapRoot");
         NodeUIs.Clear();
-        // 实例化节点
+        
         foreach (Node node in MapData.nodes)
         {
             GameObject nodeObj = Instantiate(NodePrefab, mapRoot.transform);
