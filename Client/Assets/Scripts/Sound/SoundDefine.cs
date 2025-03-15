@@ -1,7 +1,5 @@
 ﻿class SoundDefine
 {
-    public const string Music_MainMenu = "mainMenu";
-    public const string Music_LevelDemo = "Level_Demo";
 
     public const string SFX_Message_Info = "UI/sfx_msg_info";
     public const string SFX_Message_Error = "UI/sfx_msg_error";

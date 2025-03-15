@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class GameMenuPanel : MonoBehaviour
 {
+
     public void OnClickInfo()
     {
         UIManager.Instance.Show<UIInfo>();

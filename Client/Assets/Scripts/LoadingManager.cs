@@ -23,7 +23,7 @@ public class LoadingManager : MonoBehaviour {
             loadingPanel.gameObject.SetActive(true);
             yield return new WaitForSeconds(12f);
             gameMenuPanel.gameObject.SetActive(true);
-            SoundManager.Instance.PlayMusic(SoundDefine.Music_MainMenu);
+            SoundManager.Instance.PlayMusic(MusicDefine.Music_MainMenu);
             yield return DataManager.Instance.LoadData();
             isBack = true;
         }
@@ -31,7 +31,7 @@ public class LoadingManager : MonoBehaviour {
         {
             {
                 gameMenuPanel.gameObject.SetActive(true);
-                SoundManager.Instance.PlayMusic(SoundDefine.Music_MainMenu);
+                SoundManager.Instance.PlayMusic(MusicDefine.Music_MainMenu);
             }
         }
         yield return null;

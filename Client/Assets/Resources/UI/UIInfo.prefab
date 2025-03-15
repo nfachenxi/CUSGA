@@ -224,7 +224,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 382.33002, y: -464.115}
+  m_AnchoredPosition: {x: 382.33002, y: -506.305}
   m_SizeDelta: {x: 764.66, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2061616163429675593
@@ -261,7 +261,8 @@ MonoBehaviour:
     \n  \u5F00\u53D1\u5DE5\u4F5C\u5BA4\uFF1A\u7B2C\u56DB\u9886\u57DF\u521B\u6E38\u793E\n 
     \n  \u5F00\u53D1\u6210\u5458\uFF1A\n  \u7F8E\u672F\u4EBA\u5458\u2014\u2014\u5C0F\u5149\n 
     \u6587\u6848\u7B56\u5212\u2014\u2014\u5C3D\u6570\u6EE1\u5929\u661F\n  \u4E3B\u7B56\u5212\u2014\u2014Superissacboy\n 
-    \u526F\u7B56\u5212\u2014\u2014\u89C4\u8303\u7684\u76D1\u63A7\u5BA4\n  \u4E3B\u7A0B\u517C\u9879\u76EE\u8D1F\u8D23\u4EBA\u2014\u2014NFA\u6668\u66E6\n\n\n 
+    \u526F\u7B56\u5212\u2014\u2014\u53F1\u54A4\u6708\u6D77\u9C7C\u9C7C\u732B\n  \u526F\u7B56\u5212\u2014\u2014\u89C4\u8303\u7684\u76D1\u63A7\u5BA4\n 
+    \u4E3B\u7A0B\u517C\u9879\u76EE\u8D1F\u8D23\u4EBA\u2014\u2014NFA\u6668\u66E6\n\n\n\n 
     \u672C\u5DE5\u4F5C\u5BA4\u518D\u6B21\u518D\u6B21\u58F0\u660E\uFF0C\u672C\u6E38\u620F\u6D89\u53CA\u5230\u7684\u6240\u6709\u5267\u60C5\u5185\u5BB9\u7EAF\u5C5E\u865A\u6784\uFF0C\u4E0E\u73B0\u5B9E\u65E0\u5173\uFF0C\u5982\u6709\u96F7\u540C\uFF0C\u7EAF\u5C5E\u5DE7\u5408\uFF0C\u672C\u5DE5\u4F5C\u5BA4\u6240\u6709\u4EBA\u5458\u4E0D\u627F\u62C5\u4EFB\u4F55\u8D23\u4EFB\u3002"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e661ce27fcb607647b53f53010862a12, type: 2}
@@ -659,8 +660,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3647332704135372062}
   m_HandleRect: {fileID: 3767431630614624697}
   m_Direction: 2
-  m_Value: 1.0000007
-  m_Size: 0.903817
+  m_Value: 1.0000004
+  m_Size: 0.8285026
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
