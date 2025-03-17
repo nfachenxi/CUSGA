@@ -28,12 +28,7 @@ public class PlayerController : MonoBehaviour
     private float meleeTimer;
     private float rangedTimer;
 
-
     [Header("玩家设置")]
-    // 这些按键设置现在通过 Input System 来处理, 这里不再需要
-    // public KeyCode meleeAttackKey = KeyCode.J; // 近战攻击键
-    // public KeyCode rangedAttackKey = KeyCode.K; // 远程攻击键
-
     private int killCount = 0;
     private GameObject killCountUIInstance;
     private TextMeshProUGUI killCountText;
@@ -47,14 +42,13 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator; // 动画控制器
 
+    // 战斗状态
+    private bool isInCombat = false;
+
     private void Awake()
     {
         // 初始化输入控制
         playerControls = new PlayerControls();
-
-        // 注意：这里注释掉了攻击输入的订阅，因为现在是自动攻击
-        //playerControls.Player.MeleeAttack.performed += ctx => PerformMeleeAttack();
-        //playerControls.Player.RangedAttack.performed += ctx => ShootProjectile();
     }
 
     private void OnEnable()
@@ -103,10 +97,6 @@ public class PlayerController : MonoBehaviour
         // 取消订阅事件
         playerControls.Player.Move.performed -= OnMoveInput;
         playerControls.Player.Move.canceled -= OnMoveInput;
-
-        // 注意：这里也注释掉了攻击事件的取消订阅
-        //playerControls.Player.MeleeAttack.performed -= ctx => PerformMeleeAttack();
-        //playerControls.Player.RangedAttack.performed -= ctx => ShootProjectile();
     }
 
     private void OnMoveInput(InputAction.CallbackContext context)
@@ -122,21 +112,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Move();
-
-        /*// 自动攻击逻辑
-        meleeTimer += Time.deltaTime;
-        if (meleeTimer >= meleeAttackInterval)
-        {
-            PerformMeleeAttack();
-            meleeTimer = 0f;
-        }
-
-        rangedTimer += Time.deltaTime;
-        if (rangedTimer >= rangedAttackInterval)
-        {
-            ShootProjectile();
-            rangedTimer = 0f;
-        }*/
 
         // 处理动画参数
         bool isMoving = moveInput.magnitude > 0.1f;
@@ -157,8 +132,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
-        //更新击杀UI位置
+        // 更新击杀UI位置
         if (killCountUIInstance != null)
         {
             killCountUIInstance.transform.position = transform.position + Vector3.up * killCountYOffset;
@@ -194,13 +168,13 @@ public class PlayerController : MonoBehaviour
     // 近战攻击
     void PerformMeleeAttack()
     {
+        if (!isInCombat) return;
+
         // 计算攻击区域的中心点 (根据玩家朝向)
         Vector2 attackPosition = (Vector2)transform.position + (IsFacingRight() ? Vector2.right : Vector2.left) * meleeAttackRange;
 
-
         // 使用OverlapBoxAll检测区域内的敌人
         Collider2D[] hits = Physics2D.OverlapBoxAll(attackPosition, new Vector2(meleeAttackWidth, meleeAttackHeight), 0);
-
 
         foreach (Collider2D hit in hits)
         {
@@ -210,7 +184,8 @@ public class PlayerController : MonoBehaviour
                 enemy.TakeDamage(meleeDamage);
             }
         }
-        //显示攻击区域
+
+        // 显示攻击区域
         if (meleeAreaPrefab != null)
         {
             GameObject melee = Instantiate(meleeAreaPrefab, attackPosition, transform.rotation);
@@ -225,6 +200,8 @@ public class PlayerController : MonoBehaviour
     // 远程攻击 (发射三清铃)
     void ShootProjectile()
     {
+        if (!isInCombat) return;
+
         if (projectilePrefab != null)
         {
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity); // 不需要旋转，子弹自己会处理朝向
@@ -233,7 +210,6 @@ public class PlayerController : MonoBehaviour
             {
                 // 根据玩家朝向设置子弹速度
                 rb.velocity = (IsFacingRight() ? Vector2.right : Vector2.left) * projectileSpeed;
-
             }
 
             // 设置子弹的伤害
@@ -248,7 +224,8 @@ public class PlayerController : MonoBehaviour
             Debug.LogError("Projectile Prefab is null,please check it!");
         }
     }
-    //判断玩家朝向,根据移动输入的方向来判断
+
+    // 判断玩家朝向,根据移动输入的方向来判断
     private bool IsFacingRight()
     {
         return lastFacingDirection.x >= 0;  //如果水平输入大于等于0则视为面向右
@@ -257,6 +234,8 @@ public class PlayerController : MonoBehaviour
     // 增加击杀数
     public void AddKill()
     {
+        if (!isInCombat) return;
+
         killCount++;
         UpdateKillCountUI();
     }
@@ -267,5 +246,11 @@ public class PlayerController : MonoBehaviour
         {
             killCountText.text = killCount.ToString();
         }
+    }
+
+    // 设置战斗状态
+    public void SetCombatState(bool combatState)
+    {
+        isInCombat = combatState;
     }
 }

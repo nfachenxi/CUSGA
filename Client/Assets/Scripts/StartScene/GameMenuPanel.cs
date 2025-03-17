@@ -26,7 +26,7 @@ public class GameMenuPanel : MonoBehaviour
 
     public void OnClickStartGame()
     {
-        SceneManager.Instance.LoadScene("");
+        SceneManager.Instance.LoadScene("PlayerBase");
     }
 
     public void OnClickUpSkill()
