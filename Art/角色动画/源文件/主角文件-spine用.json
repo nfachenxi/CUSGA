@@ -1,0 +1,16 @@
+{ "skeleton": { "images": "D:/桌面/本地仓库/25-cusga/Art/角色动画/主角/行走/源文件/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "close-eyes", "bone": "root", "attachment": "close-eyes" }
+],
+"skins": {
+	"default": {
+		"close-eyes": {
+			"close-eyes": { "x": -31.5, "y": 1689, "width": 281, "height": 362 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

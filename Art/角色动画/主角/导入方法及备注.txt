@@ -1,0 +1,4 @@
+1.如何导入unity？
+【【Unity技巧】如何正确将Spine角色动画导入Unity】https://www.bilibili.com/video/BV1Ug2SYGEYm?vd_source=bb8abc2fc6e61d3baacb63f58081f438
+
+2.走路动画倒放是正确的播放顺序，不知道怎么改。。其他动画的播放顺序是对的没有出现该问题
