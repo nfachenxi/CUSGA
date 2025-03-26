@@ -1,0 +1,75 @@
+
+主角文件-spine用.png
+size: 1932,2023
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+back-arm
+  rotate: false
+  xy: 1416, 721
+  size: 212, 638
+  orig: 212, 641
+  offset: 0, 3
+  index: -1
+back-leg
+  rotate: false
+  xy: 1700, 1239
+  size: 230, 782
+  orig: 230, 785
+  offset: 0, 3
+  index: -1
+body
+  rotate: true
+  xy: 814, 2
+  size: 371, 600
+  orig: 371, 621
+  offset: 0, 21
+  index: -1
+close-eyes
+  rotate: false
+  xy: 1416, 138
+  size: 223, 289
+  orig: 225, 290
+  offset: 1, 0
+  index: -1
+front-arm
+  rotate: false
+  xy: 1416, 1361
+  size: 282, 660
+  orig: 282, 676
+  offset: 0, 16
+  index: -1
+front-leg
+  rotate: true
+  xy: 2, 87
+  size: 286, 810
+  orig: 286, 810
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 1250, 429
+  size: 225, 290
+  orig: 225, 290
+  offset: 0, 0
+  index: -1
+san_qing_ling
+  rotate: false
+  xy: 2, 375
+  size: 1246, 1646
+  orig: 2806, 1984
+  offset: 661, 205
+  index: -1
+
+主角文件-spine用2.png
+size: 1113,1817
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+tao_mu_jian
+  rotate: false
+  xy: 2, 2
+  size: 1109, 1813
+  orig: 2806, 1984
+  offset: 1132, 92
+  index: -1

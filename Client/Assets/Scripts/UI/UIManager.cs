@@ -20,6 +20,7 @@ public class UIManager : Singleton<UIManager> {
 		this.UIResources.Add(typeof(UISystemConfig), new UIElement() {Resources = "UI/UISystemConfig", CaChe = false });
 		this.UIResources.Add(typeof(UISystemConfigLevel), new UIElement() {Resources = "UI/UISystemConfigLevel", CaChe = false });
 		this.UIResources.Add(typeof(UIBaseMap), new UIElement() {Resources = "UI/UIBaseMap", CaChe = true });
+		this.UIResources.Add(typeof(UIMonsterMap), new UIElement() {Resources = "UI/UIMonsterMap", CaChe = false });
     }
 
     ~UIManager()
