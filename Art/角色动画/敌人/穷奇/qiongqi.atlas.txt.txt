@@ -1,0 +1,69 @@
+
+野兽山林怪物设计.png
+size: 2002,1073
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+back-arm
+  rotate: false
+  xy: 360, 61
+  size: 356, 486
+  orig: 385, 494
+  offset: 0, 8
+  index: -1
+back-leg
+  rotate: true
+  xy: 1021, 84
+  size: 302, 424
+  orig: 340, 442
+  offset: 6, 9
+  index: -1
+back-wing
+  rotate: true
+  xy: 1810, 62
+  size: 641, 190
+  orig: 641, 190
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 1082, 705
+  size: 850, 366
+  orig: 860, 745
+  offset: 0, 363
+  index: -1
+front-arm
+  rotate: false
+  xy: 2, 58
+  size: 356, 489
+  orig: 385, 497
+  offset: 0, 8
+  index: -1
+front-leg
+  rotate: false
+  xy: 718, 118
+  size: 301, 429
+  orig: 334, 442
+  offset: 0, 8
+  index: -1
+front-wing
+  rotate: false
+  xy: 2, 549
+  size: 1078, 522
+  orig: 1078, 562
+  offset: 0, 26
+  index: -1
+head
+  rotate: false
+  xy: 1447, 2
+  size: 304, 384
+  orig: 314, 388
+  offset: 10, 0
+  index: -1
+tail
+  rotate: false
+  xy: 1082, 388
+  size: 726, 315
+  orig: 726, 363
+  offset: 0, 0
+  index: -1
