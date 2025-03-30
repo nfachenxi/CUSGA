@@ -1,0 +1,27 @@
+
+毛绒怪.png
+size: 648,418
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 2, 2
+  size: 454, 414
+  orig: 454, 414
+  offset: 0, 0
+  index: -1
+eye
+  rotate: true
+  xy: 458, 132
+  size: 284, 132
+  orig: 285, 132
+  offset: 0, 0
+  index: -1
+pupil
+  rotate: true
+  xy: 592, 202
+  size: 214, 54
+  orig: 214, 54
+  offset: 0, 0
+  index: -1
