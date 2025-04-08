@@ -1129,6 +1129,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIMain
       objectReference: {fileID: 0}
+    - target: {fileID: 546536866088921166, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186378699345513939, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182262116198870623, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288577647672444603, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.488
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654036496145580883, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_Name
+      value: "\u6CD5\u529B\u6761"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031538573108477181, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9881349
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031538573108477181, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031538573108477181, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031538573108477181, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.15358849
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031538573108477181, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 423
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031538573108477181, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 79
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031538573108477181, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -17.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222119827621171568, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222119827621171568, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222119827621171568, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222119827621171568, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222119827621171568, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9054345273724811794, guid: 3fc26903e65fc7a45bbb8d96fc2148b9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1323,6 +1391,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5545460123899275881, guid: e58421a2b21bb95438260d7dc3959859, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6366269817359846943, guid: e58421a2b21bb95438260d7dc3959859, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1427,10 +1499,6 @@ PrefabInstance:
     - target: {fileID: 263148253289106722, guid: f908cc9342e4e6143869a212a6c48faa, type: 3}
       propertyPath: m_Name
       value: UIBaseMap
-      objectReference: {fileID: 0}
-    - target: {fileID: 263148253289106722, guid: f908cc9342e4e6143869a212a6c48faa, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8812216278208223414, guid: f908cc9342e4e6143869a212a6c48faa, type: 3}
       propertyPath: m_Pivot.x
